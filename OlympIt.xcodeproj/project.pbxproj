@@ -7,21 +7,43 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9E8967132B81E58700BAA53B /* OnbordingPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E89670E2B81E58700BAA53B /* OnbordingPresenter.swift */; };
+		9E8967142B81E58700BAA53B /* OnbordingRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E89670F2B81E58700BAA53B /* OnbordingRouter.swift */; };
+		9E8967152B81E58700BAA53B /* OnbordingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E8967102B81E58700BAA53B /* OnbordingViewController.swift */; };
+		9E8967162B81E58700BAA53B /* OnbordingProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E8967112B81E58700BAA53B /* OnbordingProtocols.swift */; };
+		9E8967172B81E58700BAA53B /* OnbordingInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E8967122B81E58700BAA53B /* OnbordingInteractor.swift */; };
+		9E8967192B81E5AC00BAA53B /* UserDefaults + Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E8967182B81E5AC00BAA53B /* UserDefaults + Ext.swift */; };
+		9E89671B2B81E6A000BAA53B /* UserSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E89671A2B81E6A000BAA53B /* UserSettings.swift */; };
 		9EA0274B2B81E0860046B1C1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EA0274A2B81E0860046B1C1 /* AppDelegate.swift */; };
 		9EA0274D2B81E0860046B1C1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EA0274C2B81E0860046B1C1 /* SceneDelegate.swift */; };
-		9EA0274F2B81E0860046B1C1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EA0274E2B81E0860046B1C1 /* ViewController.swift */; };
 		9EA027542B81E0880046B1C1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9EA027532B81E0880046B1C1 /* Assets.xcassets */; };
 		9EA027572B81E0880046B1C1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9EA027552B81E0880046B1C1 /* LaunchScreen.storyboard */; };
+		9EA027682B81E1E00046B1C1 /* DashboardPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EA027632B81E1E00046B1C1 /* DashboardPresenter.swift */; };
+		9EA027692B81E1E00046B1C1 /* DashboardRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EA027642B81E1E00046B1C1 /* DashboardRouter.swift */; };
+		9EA0276A2B81E1E00046B1C1 /* DashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EA027652B81E1E00046B1C1 /* DashboardViewController.swift */; };
+		9EA0276B2B81E1E00046B1C1 /* DashboardProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EA027662B81E1E00046B1C1 /* DashboardProtocols.swift */; };
+		9EA0276C2B81E1E00046B1C1 /* DashboardInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EA027672B81E1E00046B1C1 /* DashboardInteractor.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		9E89670E2B81E58700BAA53B /* OnbordingPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnbordingPresenter.swift; sourceTree = "<group>"; };
+		9E89670F2B81E58700BAA53B /* OnbordingRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnbordingRouter.swift; sourceTree = "<group>"; };
+		9E8967102B81E58700BAA53B /* OnbordingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnbordingViewController.swift; sourceTree = "<group>"; };
+		9E8967112B81E58700BAA53B /* OnbordingProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnbordingProtocols.swift; sourceTree = "<group>"; };
+		9E8967122B81E58700BAA53B /* OnbordingInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnbordingInteractor.swift; sourceTree = "<group>"; };
+		9E8967182B81E5AC00BAA53B /* UserDefaults + Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDefaults + Ext.swift"; sourceTree = "<group>"; };
+		9E89671A2B81E6A000BAA53B /* UserSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSettings.swift; sourceTree = "<group>"; };
 		9EA027472B81E0860046B1C1 /* OlympIt.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OlympIt.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9EA0274A2B81E0860046B1C1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9EA0274C2B81E0860046B1C1 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		9EA0274E2B81E0860046B1C1 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		9EA027532B81E0880046B1C1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9EA027562B81E0880046B1C1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9EA027582B81E0880046B1C1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9EA027632B81E1E00046B1C1 /* DashboardPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardPresenter.swift; sourceTree = "<group>"; };
+		9EA027642B81E1E00046B1C1 /* DashboardRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardRouter.swift; sourceTree = "<group>"; };
+		9EA027652B81E1E00046B1C1 /* DashboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardViewController.swift; sourceTree = "<group>"; };
+		9EA027662B81E1E00046B1C1 /* DashboardProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardProtocols.swift; sourceTree = "<group>"; };
+		9EA027672B81E1E00046B1C1 /* DashboardInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardInteractor.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -35,6 +57,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9E89670D2B81E48C00BAA53B /* UserDefaults */ = {
+			isa = PBXGroup;
+			children = (
+				9E8967182B81E5AC00BAA53B /* UserDefaults + Ext.swift */,
+			);
+			path = UserDefaults;
+			sourceTree = "<group>";
+		};
 		9EA0273E2B81E0860046B1C1 = {
 			isa = PBXGroup;
 			children = (
@@ -59,7 +89,6 @@
 				9EA027602B81E0B30046B1C1 /* Services */,
 				9EA027622B81E0DB0046B1C1 /* Modules */,
 				9EA0275E2B81E0A30046B1C1 /* Resources */,
-				9EA0274E2B81E0860046B1C1 /* ViewController.swift */,
 			);
 			path = OlympIt;
 			sourceTree = "<group>";
@@ -79,6 +108,7 @@
 			children = (
 				9EA0274A2B81E0860046B1C1 /* AppDelegate.swift */,
 				9EA0274C2B81E0860046B1C1 /* SceneDelegate.swift */,
+				9E89671A2B81E6A000BAA53B /* UserSettings.swift */,
 			);
 			path = App;
 			sourceTree = "<group>";
@@ -93,6 +123,7 @@
 		9EA027612B81E0BA0046B1C1 /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				9E89670D2B81E48C00BAA53B /* UserDefaults */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -100,8 +131,34 @@
 		9EA027622B81E0DB0046B1C1 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				9EA0276E2B81E21E0046B1C1 /* Onbording */,
+				9EA0276D2B81E2120046B1C1 /* Dashboard */,
 			);
 			path = Modules;
+			sourceTree = "<group>";
+		};
+		9EA0276D2B81E2120046B1C1 /* Dashboard */ = {
+			isa = PBXGroup;
+			children = (
+				9EA027632B81E1E00046B1C1 /* DashboardPresenter.swift */,
+				9EA027642B81E1E00046B1C1 /* DashboardRouter.swift */,
+				9EA027652B81E1E00046B1C1 /* DashboardViewController.swift */,
+				9EA027662B81E1E00046B1C1 /* DashboardProtocols.swift */,
+				9EA027672B81E1E00046B1C1 /* DashboardInteractor.swift */,
+			);
+			path = Dashboard;
+			sourceTree = "<group>";
+		};
+		9EA0276E2B81E21E0046B1C1 /* Onbording */ = {
+			isa = PBXGroup;
+			children = (
+				9E89670E2B81E58700BAA53B /* OnbordingPresenter.swift */,
+				9E89670F2B81E58700BAA53B /* OnbordingRouter.swift */,
+				9E8967102B81E58700BAA53B /* OnbordingViewController.swift */,
+				9E8967112B81E58700BAA53B /* OnbordingProtocols.swift */,
+				9E8967122B81E58700BAA53B /* OnbordingInteractor.swift */,
+			);
+			path = Onbording;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -174,9 +231,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9EA0274F2B81E0860046B1C1 /* ViewController.swift in Sources */,
 				9EA0274B2B81E0860046B1C1 /* AppDelegate.swift in Sources */,
+				9EA027692B81E1E00046B1C1 /* DashboardRouter.swift in Sources */,
+				9EA0276B2B81E1E00046B1C1 /* DashboardProtocols.swift in Sources */,
+				9E8967152B81E58700BAA53B /* OnbordingViewController.swift in Sources */,
+				9EA0276C2B81E1E00046B1C1 /* DashboardInteractor.swift in Sources */,
+				9E8967172B81E58700BAA53B /* OnbordingInteractor.swift in Sources */,
+				9EA0276A2B81E1E00046B1C1 /* DashboardViewController.swift in Sources */,
+				9E8967132B81E58700BAA53B /* OnbordingPresenter.swift in Sources */,
+				9E8967192B81E5AC00BAA53B /* UserDefaults + Ext.swift in Sources */,
+				9E8967142B81E58700BAA53B /* OnbordingRouter.swift in Sources */,
+				9E8967162B81E58700BAA53B /* OnbordingProtocols.swift in Sources */,
+				9E89671B2B81E6A000BAA53B /* UserSettings.swift in Sources */,
 				9EA0274D2B81E0860046B1C1 /* SceneDelegate.swift in Sources */,
+				9EA027682B81E1E00046B1C1 /* DashboardPresenter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -321,10 +389,9 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = OlympIt/Info.plist;
+				INFOPLIST_FILE = OlympIt/Resources/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -348,10 +415,9 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = OlympIt/Info.plist;
+				INFOPLIST_FILE = OlympIt/Resources/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
