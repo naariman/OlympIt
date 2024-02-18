@@ -12,8 +12,20 @@
 		9E8967152B81E58700BAA53B /* OnbordingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E8967102B81E58700BAA53B /* OnbordingViewController.swift */; };
 		9E8967162B81E58700BAA53B /* OnbordingProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E8967112B81E58700BAA53B /* OnbordingProtocols.swift */; };
 		9E8967172B81E58700BAA53B /* OnbordingInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E8967122B81E58700BAA53B /* OnbordingInteractor.swift */; };
-		9E8967192B81E5AC00BAA53B /* UserDefaults + Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E8967182B81E5AC00BAA53B /* UserDefaults + Ext.swift */; };
+		9E8967192B81E5AC00BAA53B /* UserDefault.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E8967182B81E5AC00BAA53B /* UserDefault.swift */; };
 		9E89671B2B81E6A000BAA53B /* UserSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E89671A2B81E6A000BAA53B /* UserSettings.swift */; };
+		9E89671E2B81EBDE00BAA53B /* CombineMoya in Frameworks */ = {isa = PBXBuildFile; productRef = 9E89671D2B81EBDE00BAA53B /* CombineMoya */; };
+		9E8967202B81EBDE00BAA53B /* Moya in Frameworks */ = {isa = PBXBuildFile; productRef = 9E89671F2B81EBDE00BAA53B /* Moya */; };
+		9E8967222B81EBDE00BAA53B /* ReactiveMoya in Frameworks */ = {isa = PBXBuildFile; productRef = 9E8967212B81EBDE00BAA53B /* ReactiveMoya */; };
+		9E8967242B81EBDE00BAA53B /* RxMoya in Frameworks */ = {isa = PBXBuildFile; productRef = 9E8967232B81EBDE00BAA53B /* RxMoya */; };
+		9E8967272B81EC3900BAA53B /* UIViewController + Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E8967262B81EC3900BAA53B /* UIViewController + Ext.swift */; };
+		9E89672A2B81EC8300BAA53B /* NVActivityIndicatorView in Frameworks */ = {isa = PBXBuildFile; productRef = 9E8967292B81EC8300BAA53B /* NVActivityIndicatorView */; };
+		9E89672C2B81EC8300BAA53B /* NVActivityIndicatorViewExtended in Frameworks */ = {isa = PBXBuildFile; productRef = 9E89672B2B81EC8300BAA53B /* NVActivityIndicatorViewExtended */; };
+		9E89672F2B81EE8E00BAA53B /* swiftgen.config.yml in Resources */ = {isa = PBXBuildFile; fileRef = 9E89672E2B81EE8E00BAA53B /* swiftgen.config.yml */; };
+		9E8967312B81F1B300BAA53B /* template.stencil in Sources */ = {isa = PBXBuildFile; fileRef = 9E8967302B81F1B300BAA53B /* template.stencil */; };
+		9E8967332B82051100BAA53B /* Assets.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E8967322B82051100BAA53B /* Assets.generated.swift */; };
+		9E8967372B820A1000BAA53B /* LoadableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E8967362B820A1000BAA53B /* LoadableViewController.swift */; };
+		9E8967392B82119200BAA53B /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9E8967382B82119200BAA53B /* Colors.xcassets */; };
 		9EA0274B2B81E0860046B1C1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EA0274A2B81E0860046B1C1 /* AppDelegate.swift */; };
 		9EA0274D2B81E0860046B1C1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EA0274C2B81E0860046B1C1 /* SceneDelegate.swift */; };
 		9EA027542B81E0880046B1C1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9EA027532B81E0880046B1C1 /* Assets.xcassets */; };
@@ -31,8 +43,14 @@
 		9E8967102B81E58700BAA53B /* OnbordingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnbordingViewController.swift; sourceTree = "<group>"; };
 		9E8967112B81E58700BAA53B /* OnbordingProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnbordingProtocols.swift; sourceTree = "<group>"; };
 		9E8967122B81E58700BAA53B /* OnbordingInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnbordingInteractor.swift; sourceTree = "<group>"; };
-		9E8967182B81E5AC00BAA53B /* UserDefaults + Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDefaults + Ext.swift"; sourceTree = "<group>"; };
+		9E8967182B81E5AC00BAA53B /* UserDefault.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefault.swift; sourceTree = "<group>"; };
 		9E89671A2B81E6A000BAA53B /* UserSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSettings.swift; sourceTree = "<group>"; };
+		9E8967262B81EC3900BAA53B /* UIViewController + Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController + Ext.swift"; sourceTree = "<group>"; };
+		9E89672E2B81EE8E00BAA53B /* swiftgen.config.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = swiftgen.config.yml; sourceTree = "<group>"; };
+		9E8967302B81F1B300BAA53B /* template.stencil */ = {isa = PBXFileReference; lastKnownFileType = text; path = template.stencil; sourceTree = "<group>"; };
+		9E8967322B82051100BAA53B /* Assets.generated.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Assets.generated.swift; sourceTree = "<group>"; };
+		9E8967362B820A1000BAA53B /* LoadableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadableViewController.swift; sourceTree = "<group>"; };
+		9E8967382B82119200BAA53B /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 		9EA027472B81E0860046B1C1 /* OlympIt.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OlympIt.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9EA0274A2B81E0860046B1C1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9EA0274C2B81E0860046B1C1 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -51,6 +69,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9E8967202B81EBDE00BAA53B /* Moya in Frameworks */,
+				9E89672A2B81EC8300BAA53B /* NVActivityIndicatorView in Frameworks */,
+				9E89671E2B81EBDE00BAA53B /* CombineMoya in Frameworks */,
+				9E89672C2B81EC8300BAA53B /* NVActivityIndicatorViewExtended in Frameworks */,
+				9E8967242B81EBDE00BAA53B /* RxMoya in Frameworks */,
+				9E8967222B81EBDE00BAA53B /* ReactiveMoya in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -60,9 +84,35 @@
 		9E89670D2B81E48C00BAA53B /* UserDefaults */ = {
 			isa = PBXGroup;
 			children = (
-				9E8967182B81E5AC00BAA53B /* UserDefaults + Ext.swift */,
+				9E8967182B81E5AC00BAA53B /* UserDefault.swift */,
 			);
 			path = UserDefaults;
+			sourceTree = "<group>";
+		};
+		9E8967252B81EC2700BAA53B /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				9E8967262B81EC3900BAA53B /* UIViewController + Ext.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		9E89672D2B81EE5E00BAA53B /* SwiftGen */ = {
+			isa = PBXGroup;
+			children = (
+				9E89672E2B81EE8E00BAA53B /* swiftgen.config.yml */,
+				9E8967302B81F1B300BAA53B /* template.stencil */,
+				9E8967322B82051100BAA53B /* Assets.generated.swift */,
+			);
+			path = SwiftGen;
+			sourceTree = "<group>";
+		};
+		9E8967352B820A0000BAA53B /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				9E8967362B820A1000BAA53B /* LoadableViewController.swift */,
+			);
+			path = Protocols;
 			sourceTree = "<group>";
 		};
 		9EA0273E2B81E0860046B1C1 = {
@@ -84,6 +134,7 @@
 		9EA027492B81E0860046B1C1 /* OlympIt */ = {
 			isa = PBXGroup;
 			children = (
+				9E89672D2B81EE5E00BAA53B /* SwiftGen */,
 				9EA0275F2B81E0AA0046B1C1 /* App */,
 				9EA027612B81E0BA0046B1C1 /* Core */,
 				9EA027602B81E0B30046B1C1 /* Services */,
@@ -97,6 +148,7 @@
 			isa = PBXGroup;
 			children = (
 				9EA027532B81E0880046B1C1 /* Assets.xcassets */,
+				9E8967382B82119200BAA53B /* Colors.xcassets */,
 				9EA027552B81E0880046B1C1 /* LaunchScreen.storyboard */,
 				9EA027582B81E0880046B1C1 /* Info.plist */,
 			);
@@ -123,6 +175,8 @@
 		9EA027612B81E0BA0046B1C1 /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				9E8967352B820A0000BAA53B /* Protocols */,
+				9E8967252B81EC2700BAA53B /* Extensions */,
 				9E89670D2B81E48C00BAA53B /* UserDefaults */,
 			);
 			path = Core;
@@ -169,6 +223,7 @@
 			buildConfigurationList = 9EA0275B2B81E0880046B1C1 /* Build configuration list for PBXNativeTarget "OlympIt" */;
 			buildPhases = (
 				9EA027432B81E0860046B1C1 /* Sources */,
+				9E8967342B82056100BAA53B /* Swift Gen */,
 				9EA027442B81E0860046B1C1 /* Frameworks */,
 				9EA027452B81E0860046B1C1 /* Resources */,
 			);
@@ -177,6 +232,14 @@
 			dependencies = (
 			);
 			name = OlympIt;
+			packageProductDependencies = (
+				9E89671D2B81EBDE00BAA53B /* CombineMoya */,
+				9E89671F2B81EBDE00BAA53B /* Moya */,
+				9E8967212B81EBDE00BAA53B /* ReactiveMoya */,
+				9E8967232B81EBDE00BAA53B /* RxMoya */,
+				9E8967292B81EC8300BAA53B /* NVActivityIndicatorView */,
+				9E89672B2B81EC8300BAA53B /* NVActivityIndicatorViewExtended */,
+			);
 			productName = OlympIt;
 			productReference = 9EA027472B81E0860046B1C1 /* OlympIt.app */;
 			productType = "com.apple.product-type.application";
@@ -205,6 +268,10 @@
 				Base,
 			);
 			mainGroup = 9EA0273E2B81E0860046B1C1;
+			packageReferences = (
+				9E89671C2B81EBDE00BAA53B /* XCRemoteSwiftPackageReference "Moya" */,
+				9E8967282B81EC8300BAA53B /* XCRemoteSwiftPackageReference "NVActivityIndicatorView" */,
+			);
 			productRefGroup = 9EA027482B81E0860046B1C1 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -220,11 +287,34 @@
 			buildActionMask = 2147483647;
 			files = (
 				9EA027572B81E0880046B1C1 /* LaunchScreen.storyboard in Resources */,
+				9E8967392B82119200BAA53B /* Colors.xcassets in Resources */,
+				9E89672F2B81EE8E00BAA53B /* swiftgen.config.yml in Resources */,
 				9EA027542B81E0880046B1C1 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		9E8967342B82056100BAA53B /* Swift Gen */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Swift Gen";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\nexport PATH=\"$PATH:/opt/homebrew/bin\"\nif which swiftgen >& /dev/null; then\n  swiftgen config run --config OlympIt/SwiftGen/swiftgen.config.yml\nelse\n  echo \"error: SwiftGen not installed, download from https://github.com/SwiftGen/SwiftGen\"\nfi\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		9EA027432B81E0860046B1C1 /* Sources */ = {
@@ -239,11 +329,15 @@
 				9E8967172B81E58700BAA53B /* OnbordingInteractor.swift in Sources */,
 				9EA0276A2B81E1E00046B1C1 /* DashboardViewController.swift in Sources */,
 				9E8967132B81E58700BAA53B /* OnbordingPresenter.swift in Sources */,
-				9E8967192B81E5AC00BAA53B /* UserDefaults + Ext.swift in Sources */,
+				9E8967372B820A1000BAA53B /* LoadableViewController.swift in Sources */,
+				9E8967192B81E5AC00BAA53B /* UserDefault.swift in Sources */,
+				9E8967332B82051100BAA53B /* Assets.generated.swift in Sources */,
 				9E8967142B81E58700BAA53B /* OnbordingRouter.swift in Sources */,
 				9E8967162B81E58700BAA53B /* OnbordingProtocols.swift in Sources */,
 				9E89671B2B81E6A000BAA53B /* UserSettings.swift in Sources */,
 				9EA0274D2B81E0860046B1C1 /* SceneDelegate.swift in Sources */,
+				9E8967312B81F1B300BAA53B /* template.stencil in Sources */,
+				9E8967272B81EC3900BAA53B /* UIViewController + Ext.swift in Sources */,
 				9EA027682B81E1E00046B1C1 /* DashboardPresenter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -299,7 +393,7 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
-				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu17;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -362,7 +456,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu17;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -388,6 +482,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 532GA5V6NJ;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = OlympIt/Resources/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -414,6 +509,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 532GA5V6NJ;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = OlympIt/Resources/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -455,6 +551,58 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		9E89671C2B81EBDE00BAA53B /* XCRemoteSwiftPackageReference "Moya" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Moya/Moya.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 15.0.3;
+			};
+		};
+		9E8967282B81EC8300BAA53B /* XCRemoteSwiftPackageReference "NVActivityIndicatorView" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ninjaprox/NVActivityIndicatorView.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.1.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		9E89671D2B81EBDE00BAA53B /* CombineMoya */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 9E89671C2B81EBDE00BAA53B /* XCRemoteSwiftPackageReference "Moya" */;
+			productName = CombineMoya;
+		};
+		9E89671F2B81EBDE00BAA53B /* Moya */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 9E89671C2B81EBDE00BAA53B /* XCRemoteSwiftPackageReference "Moya" */;
+			productName = Moya;
+		};
+		9E8967212B81EBDE00BAA53B /* ReactiveMoya */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 9E89671C2B81EBDE00BAA53B /* XCRemoteSwiftPackageReference "Moya" */;
+			productName = ReactiveMoya;
+		};
+		9E8967232B81EBDE00BAA53B /* RxMoya */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 9E89671C2B81EBDE00BAA53B /* XCRemoteSwiftPackageReference "Moya" */;
+			productName = RxMoya;
+		};
+		9E8967292B81EC8300BAA53B /* NVActivityIndicatorView */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 9E8967282B81EC8300BAA53B /* XCRemoteSwiftPackageReference "NVActivityIndicatorView" */;
+			productName = NVActivityIndicatorView;
+		};
+		9E89672B2B81EC8300BAA53B /* NVActivityIndicatorViewExtended */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 9E8967282B81EC8300BAA53B /* XCRemoteSwiftPackageReference "NVActivityIndicatorView" */;
+			productName = NVActivityIndicatorViewExtended;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 9EA0273F2B81E0860046B1C1 /* Project object */;
 }

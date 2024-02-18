@@ -33,12 +33,16 @@ private extension SceneDelegate {
             
         case .displayApp:
             
-            return DashboardRouter.createModule()
+            return UINavigationController(
+                rootViewController: DashboardRouter.createModule()
+            )
             
         case .displayOnboarding:
             
 //            return OnbordingRouter.createModule()
-            return DashboardRouter.createModule()
+            return UINavigationController(
+                rootViewController: DashboardRouter.createModule()
+            )
         }
     }
     

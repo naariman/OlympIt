@@ -10,15 +10,35 @@
 
 import UIKit
 
-final class DashboardViewController: UIViewController, DashboardViewProtocol {
+final class DashboardViewController: UIViewController, 
+                                     DashboardViewProtocol,
+                                     LoadableViewController {
+    
 	var presenter: DashboardPresenterProtocol?
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        setupNavigationBar()
+    }
 
 	override func viewDidLoad() {
         super.viewDidLoad()
+        view.backgroundColor = .main404043
     }
 }
 
 // MARK: Setup UI
 extension DashboardViewController {
+    
+    private func setupNavigationBar() {
+        setLeftAlignedNavigationItemTitle(
+            text: "Добро пожаловать",
+            color: .white
+        )
+    }
+    
+    func setupUI() {
+        
+    }
     
 }
