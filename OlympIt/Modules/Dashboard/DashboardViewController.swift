@@ -9,12 +9,50 @@
 //
 
 import UIKit
+import SnapKit
+import BetterSegmentedControl
 
-final class DashboardViewController: UIViewController, 
+enum LessonType: CaseIterable {
+    case olympic
+    case exam
+    
+    var title: String {
+        switch self {
+        case .exam:
+            return "ЕГЭ"
+        case .olympic:
+            return "Олимпиада"
+        }
+    }
+}
+
+final class DashboardViewController: UIViewController,
                                      DashboardViewProtocol,
                                      LoadableViewController {
     
 	var presenter: DashboardPresenterProtocol?
+
+    private let segmentedControl = BetterSegmentedControl(
+        frame: .zero,
+        segments: LabelSegment.segments(
+            withTitles: LessonType.allCases.map { $0.title },
+            normalTextColor: .lightGray,
+            selectedTextColor: .white
+        ),
+        options:[.backgroundColor(.darkGray),
+                 .indicatorViewBackgroundColor(.red),
+        .cornerRadius(12.0),
+        .animationSpringDamping(1.5)
+        ]
+    )
+    
+    private let subtitleLabel: UILabel = {
+       let label = UILabel()
+        label.textColor = AppColor._727274.uiColor
+        label.font = .systemFont(ofSize: 14)
+        label.text = "Что будем учить сегодня?"
+        return label
+    }()
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -23,22 +61,68 @@ final class DashboardViewController: UIViewController,
 
 	override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .main404043
+        setupUI()
+        setupNavigationControl()
     }
 }
 
 // MARK: Setup UI
 extension DashboardViewController {
     
-    private func setupNavigationBar() {
+    func setupNavigationBar() {
         setLeftAlignedNavigationItemTitle(
-            text: "Добро пожаловать",
+            text: "Добро пожаловать!",
             color: .white
         )
     }
     
     func setupUI() {
+        view.backgroundColor = AppColor.main37343B.uiColor
+        view.addSubviews(
+            subtitleLabel,
+            segmentedControl
+        )
+    
+        segmentedControl.addTarget(
+            self,
+            action: #selector(
+                DashboardViewController.navigationSegmentedControlValueChanged(_:)
+            ),
+            for: .valueChanged
+        )
+
         
+        subtitleLabel.snp.makeConstraints { make in
+            make.top.equalTo(view.safeAreaLayoutGuide.snp.top)
+            make.centerX.equalToSuperview()
+        }
+        
+        segmentedControl.snp.makeConstraints { make in
+            make.top.equalTo(subtitleLabel.snp.bottom).offset(32)
+            make.leading.trailing.equalToSuperview().inset(32)
+            make.height.equalTo(50)
+        }
+    }
+    
+    func setupNavigationControl() {
+    
+    }
+    
+}
+
+// MARK: - s
+private extension DashboardViewController {
+    func configureData() {}
+    
+    
+    @objc func navigationSegmentedControlValueChanged(
+        _ sender: BetterSegmentedControl
+    ) {
+        if sender.index == 0 {
+            view.backgroundColor = .white
+        } else {
+            view.backgroundColor = .darkGray
+        }
     }
     
 }

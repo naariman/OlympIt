@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9E23BBEC2B8A30BB00DA0D42 /* AppImages .swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E23BBEB2B8A30BB00DA0D42 /* AppImages .swift */; };
+		9E23BBEE2B8A30D800DA0D42 /* AppColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E23BBED2B8A30D800DA0D42 /* AppColors.swift */; };
+		9E23BC272B8A471200DA0D42 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 9E23BC262B8A471200DA0D42 /* Kingfisher */; };
 		9E8967132B81E58700BAA53B /* OnbordingPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E89670E2B81E58700BAA53B /* OnbordingPresenter.swift */; };
 		9E8967142B81E58700BAA53B /* OnbordingRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E89670F2B81E58700BAA53B /* OnbordingRouter.swift */; };
 		9E8967152B81E58700BAA53B /* OnbordingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E8967102B81E58700BAA53B /* OnbordingViewController.swift */; };
@@ -21,11 +24,7 @@
 		9E8967272B81EC3900BAA53B /* UIViewController + Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E8967262B81EC3900BAA53B /* UIViewController + Ext.swift */; };
 		9E89672A2B81EC8300BAA53B /* NVActivityIndicatorView in Frameworks */ = {isa = PBXBuildFile; productRef = 9E8967292B81EC8300BAA53B /* NVActivityIndicatorView */; };
 		9E89672C2B81EC8300BAA53B /* NVActivityIndicatorViewExtended in Frameworks */ = {isa = PBXBuildFile; productRef = 9E89672B2B81EC8300BAA53B /* NVActivityIndicatorViewExtended */; };
-		9E89672F2B81EE8E00BAA53B /* swiftgen.config.yml in Resources */ = {isa = PBXBuildFile; fileRef = 9E89672E2B81EE8E00BAA53B /* swiftgen.config.yml */; };
-		9E8967312B81F1B300BAA53B /* template.stencil in Sources */ = {isa = PBXBuildFile; fileRef = 9E8967302B81F1B300BAA53B /* template.stencil */; };
-		9E8967332B82051100BAA53B /* Assets.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E8967322B82051100BAA53B /* Assets.generated.swift */; };
 		9E8967372B820A1000BAA53B /* LoadableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E8967362B820A1000BAA53B /* LoadableViewController.swift */; };
-		9E8967392B82119200BAA53B /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9E8967382B82119200BAA53B /* Colors.xcassets */; };
 		9EA0274B2B81E0860046B1C1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EA0274A2B81E0860046B1C1 /* AppDelegate.swift */; };
 		9EA0274D2B81E0860046B1C1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EA0274C2B81E0860046B1C1 /* SceneDelegate.swift */; };
 		9EA027542B81E0880046B1C1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9EA027532B81E0880046B1C1 /* Assets.xcassets */; };
@@ -35,9 +34,19 @@
 		9EA0276A2B81E1E00046B1C1 /* DashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EA027652B81E1E00046B1C1 /* DashboardViewController.swift */; };
 		9EA0276B2B81E1E00046B1C1 /* DashboardProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EA027662B81E1E00046B1C1 /* DashboardProtocols.swift */; };
 		9EA0276C2B81E1E00046B1C1 /* DashboardInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EA027672B81E1E00046B1C1 /* DashboardInteractor.swift */; };
+		9EB0B75C2B9CCC6F00B6671B /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 9EB0B75B2B9CCC6F00B6671B /* SnapKit */; };
+		9EB0B75E2B9CCC6F00B6671B /* SnapKit-Dynamic in Frameworks */ = {isa = PBXBuildFile; productRef = 9EB0B75D2B9CCC6F00B6671B /* SnapKit-Dynamic */; };
+		9EB0B7602B9CCE9400B6671B /* UIView + Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EB0B75F2B9CCE9400B6671B /* UIView + Ext.swift */; };
+		9EB23C822B9CDD33006A5283 /* OTView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EB23C812B9CDD33006A5283 /* OTView.swift */; };
+		9EB23C852B9CE4CA006A5283 /* BetterSegmentedControl in Frameworks */ = {isa = PBXBuildFile; productRef = 9EB23C842B9CE4CA006A5283 /* BetterSegmentedControl */; };
+		DB9809778ABC474F5139645F /* Pods_OlympIt.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BEFB92FEA0494393EC635E53 /* Pods_OlympIt.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0AC51871CB7F03BA96B7C926 /* Pods-OlympIt.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OlympIt.release.xcconfig"; path = "Target Support Files/Pods-OlympIt/Pods-OlympIt.release.xcconfig"; sourceTree = "<group>"; };
+		8F0A93FBFA6CA391F24C52AD /* Pods-OlympIt.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OlympIt.debug.xcconfig"; path = "Target Support Files/Pods-OlympIt/Pods-OlympIt.debug.xcconfig"; sourceTree = "<group>"; };
+		9E23BBEB2B8A30BB00DA0D42 /* AppImages .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppImages .swift"; sourceTree = "<group>"; };
+		9E23BBED2B8A30D800DA0D42 /* AppColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppColors.swift; sourceTree = "<group>"; };
 		9E89670E2B81E58700BAA53B /* OnbordingPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnbordingPresenter.swift; sourceTree = "<group>"; };
 		9E89670F2B81E58700BAA53B /* OnbordingRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnbordingRouter.swift; sourceTree = "<group>"; };
 		9E8967102B81E58700BAA53B /* OnbordingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnbordingViewController.swift; sourceTree = "<group>"; };
@@ -46,11 +55,7 @@
 		9E8967182B81E5AC00BAA53B /* UserDefault.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefault.swift; sourceTree = "<group>"; };
 		9E89671A2B81E6A000BAA53B /* UserSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSettings.swift; sourceTree = "<group>"; };
 		9E8967262B81EC3900BAA53B /* UIViewController + Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController + Ext.swift"; sourceTree = "<group>"; };
-		9E89672E2B81EE8E00BAA53B /* swiftgen.config.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = swiftgen.config.yml; sourceTree = "<group>"; };
-		9E8967302B81F1B300BAA53B /* template.stencil */ = {isa = PBXFileReference; lastKnownFileType = text; path = template.stencil; sourceTree = "<group>"; };
-		9E8967322B82051100BAA53B /* Assets.generated.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Assets.generated.swift; sourceTree = "<group>"; };
 		9E8967362B820A1000BAA53B /* LoadableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadableViewController.swift; sourceTree = "<group>"; };
-		9E8967382B82119200BAA53B /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 		9EA027472B81E0860046B1C1 /* OlympIt.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OlympIt.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9EA0274A2B81E0860046B1C1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9EA0274C2B81E0860046B1C1 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -62,6 +67,9 @@
 		9EA027652B81E1E00046B1C1 /* DashboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardViewController.swift; sourceTree = "<group>"; };
 		9EA027662B81E1E00046B1C1 /* DashboardProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardProtocols.swift; sourceTree = "<group>"; };
 		9EA027672B81E1E00046B1C1 /* DashboardInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardInteractor.swift; sourceTree = "<group>"; };
+		9EB0B75F2B9CCE9400B6671B /* UIView + Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView + Ext.swift"; sourceTree = "<group>"; };
+		9EB23C812B9CDD33006A5283 /* OTView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTView.swift; sourceTree = "<group>"; };
+		BEFB92FEA0494393EC635E53 /* Pods_OlympIt.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OlympIt.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,11 +78,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				9E8967202B81EBDE00BAA53B /* Moya in Frameworks */,
+				9EB0B75C2B9CCC6F00B6671B /* SnapKit in Frameworks */,
 				9E89672A2B81EC8300BAA53B /* NVActivityIndicatorView in Frameworks */,
+				9E23BC272B8A471200DA0D42 /* Kingfisher in Frameworks */,
 				9E89671E2B81EBDE00BAA53B /* CombineMoya in Frameworks */,
+				9EB0B75E2B9CCC6F00B6671B /* SnapKit-Dynamic in Frameworks */,
+				9EB23C852B9CE4CA006A5283 /* BetterSegmentedControl in Frameworks */,
 				9E89672C2B81EC8300BAA53B /* NVActivityIndicatorViewExtended in Frameworks */,
 				9E8967242B81EBDE00BAA53B /* RxMoya in Frameworks */,
 				9E8967222B81EBDE00BAA53B /* ReactiveMoya in Frameworks */,
+				DB9809778ABC474F5139645F /* Pods_OlympIt.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -93,18 +106,9 @@
 			isa = PBXGroup;
 			children = (
 				9E8967262B81EC3900BAA53B /* UIViewController + Ext.swift */,
+				9EB0B75F2B9CCE9400B6671B /* UIView + Ext.swift */,
 			);
 			path = Extensions;
-			sourceTree = "<group>";
-		};
-		9E89672D2B81EE5E00BAA53B /* SwiftGen */ = {
-			isa = PBXGroup;
-			children = (
-				9E89672E2B81EE8E00BAA53B /* swiftgen.config.yml */,
-				9E8967302B81F1B300BAA53B /* template.stencil */,
-				9E8967322B82051100BAA53B /* Assets.generated.swift */,
-			);
-			path = SwiftGen;
 			sourceTree = "<group>";
 		};
 		9E8967352B820A0000BAA53B /* Protocols */ = {
@@ -120,6 +124,8 @@
 			children = (
 				9EA027492B81E0860046B1C1 /* OlympIt */,
 				9EA027482B81E0860046B1C1 /* Products */,
+				B76EB0A499696BABD655C9AE /* Pods */,
+				B3A4E0D0B5F8A9BBD83F65D0 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -134,7 +140,6 @@
 		9EA027492B81E0860046B1C1 /* OlympIt */ = {
 			isa = PBXGroup;
 			children = (
-				9E89672D2B81EE5E00BAA53B /* SwiftGen */,
 				9EA0275F2B81E0AA0046B1C1 /* App */,
 				9EA027612B81E0BA0046B1C1 /* Core */,
 				9EA027602B81E0B30046B1C1 /* Services */,
@@ -147,8 +152,9 @@
 		9EA0275E2B81E0A30046B1C1 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				9E23BBEB2B8A30BB00DA0D42 /* AppImages .swift */,
+				9E23BBED2B8A30D800DA0D42 /* AppColors.swift */,
 				9EA027532B81E0880046B1C1 /* Assets.xcassets */,
-				9E8967382B82119200BAA53B /* Colors.xcassets */,
 				9EA027552B81E0880046B1C1 /* LaunchScreen.storyboard */,
 				9EA027582B81E0880046B1C1 /* Info.plist */,
 			);
@@ -175,6 +181,7 @@
 		9EA027612B81E0BA0046B1C1 /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				9EB0B7612B9CD13600B6671B /* basic */,
 				9E8967352B820A0000BAA53B /* Protocols */,
 				9E8967252B81EC2700BAA53B /* Extensions */,
 				9E89670D2B81E48C00BAA53B /* UserDefaults */,
@@ -215,6 +222,31 @@
 			path = Onbording;
 			sourceTree = "<group>";
 		};
+		9EB0B7612B9CD13600B6671B /* basic */ = {
+			isa = PBXGroup;
+			children = (
+				9EB23C812B9CDD33006A5283 /* OTView.swift */,
+			);
+			path = basic;
+			sourceTree = "<group>";
+		};
+		B3A4E0D0B5F8A9BBD83F65D0 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				BEFB92FEA0494393EC635E53 /* Pods_OlympIt.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		B76EB0A499696BABD655C9AE /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				8F0A93FBFA6CA391F24C52AD /* Pods-OlympIt.debug.xcconfig */,
+				0AC51871CB7F03BA96B7C926 /* Pods-OlympIt.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -222,8 +254,8 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 9EA0275B2B81E0880046B1C1 /* Build configuration list for PBXNativeTarget "OlympIt" */;
 			buildPhases = (
+				62077BC4E64933CF570CB1E7 /* [CP] Check Pods Manifest.lock */,
 				9EA027432B81E0860046B1C1 /* Sources */,
-				9E8967342B82056100BAA53B /* Swift Gen */,
 				9EA027442B81E0860046B1C1 /* Frameworks */,
 				9EA027452B81E0860046B1C1 /* Resources */,
 			);
@@ -239,6 +271,10 @@
 				9E8967232B81EBDE00BAA53B /* RxMoya */,
 				9E8967292B81EC8300BAA53B /* NVActivityIndicatorView */,
 				9E89672B2B81EC8300BAA53B /* NVActivityIndicatorViewExtended */,
+				9E23BC262B8A471200DA0D42 /* Kingfisher */,
+				9EB0B75B2B9CCC6F00B6671B /* SnapKit */,
+				9EB0B75D2B9CCC6F00B6671B /* SnapKit-Dynamic */,
+				9EB23C842B9CE4CA006A5283 /* BetterSegmentedControl */,
 			);
 			productName = OlympIt;
 			productReference = 9EA027472B81E0860046B1C1 /* OlympIt.app */;
@@ -271,6 +307,9 @@
 			packageReferences = (
 				9E89671C2B81EBDE00BAA53B /* XCRemoteSwiftPackageReference "Moya" */,
 				9E8967282B81EC8300BAA53B /* XCRemoteSwiftPackageReference "NVActivityIndicatorView" */,
+				9E23BC252B8A471200DA0D42 /* XCRemoteSwiftPackageReference "Kingfisher" */,
+				9EB0B75A2B9CCC6F00B6671B /* XCRemoteSwiftPackageReference "SnapKit" */,
+				9EB23C832B9CE4CA006A5283 /* XCRemoteSwiftPackageReference "BetterSegmentedControl" */,
 			);
 			productRefGroup = 9EA027482B81E0860046B1C1 /* Products */;
 			projectDirPath = "";
@@ -287,8 +326,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				9EA027572B81E0880046B1C1 /* LaunchScreen.storyboard in Resources */,
-				9E8967392B82119200BAA53B /* Colors.xcassets in Resources */,
-				9E89672F2B81EE8E00BAA53B /* swiftgen.config.yml in Resources */,
 				9EA027542B81E0880046B1C1 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -296,7 +333,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		9E8967342B82056100BAA53B /* Swift Gen */ = {
+		62077BC4E64933CF570CB1E7 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -304,15 +341,19 @@
 			inputFileListPaths = (
 			);
 			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
 			);
-			name = "Swift Gen";
+			name = "[CP] Check Pods Manifest.lock";
 			outputFileListPaths = (
 			);
 			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-OlympIt-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\nexport PATH=\"$PATH:/opt/homebrew/bin\"\nif which swiftgen >& /dev/null; then\n  swiftgen config run --config OlympIt/SwiftGen/swiftgen.config.yml\nelse\n  echo \"error: SwiftGen not installed, download from https://github.com/SwiftGen/SwiftGen\"\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -323,20 +364,22 @@
 			files = (
 				9EA0274B2B81E0860046B1C1 /* AppDelegate.swift in Sources */,
 				9EA027692B81E1E00046B1C1 /* DashboardRouter.swift in Sources */,
+				9EB0B7602B9CCE9400B6671B /* UIView + Ext.swift in Sources */,
 				9EA0276B2B81E1E00046B1C1 /* DashboardProtocols.swift in Sources */,
 				9E8967152B81E58700BAA53B /* OnbordingViewController.swift in Sources */,
 				9EA0276C2B81E1E00046B1C1 /* DashboardInteractor.swift in Sources */,
 				9E8967172B81E58700BAA53B /* OnbordingInteractor.swift in Sources */,
 				9EA0276A2B81E1E00046B1C1 /* DashboardViewController.swift in Sources */,
 				9E8967132B81E58700BAA53B /* OnbordingPresenter.swift in Sources */,
+				9E23BBEC2B8A30BB00DA0D42 /* AppImages .swift in Sources */,
+				9E23BBEE2B8A30D800DA0D42 /* AppColors.swift in Sources */,
 				9E8967372B820A1000BAA53B /* LoadableViewController.swift in Sources */,
 				9E8967192B81E5AC00BAA53B /* UserDefault.swift in Sources */,
-				9E8967332B82051100BAA53B /* Assets.generated.swift in Sources */,
 				9E8967142B81E58700BAA53B /* OnbordingRouter.swift in Sources */,
 				9E8967162B81E58700BAA53B /* OnbordingProtocols.swift in Sources */,
 				9E89671B2B81E6A000BAA53B /* UserSettings.swift in Sources */,
+				9EB23C822B9CDD33006A5283 /* OTView.swift in Sources */,
 				9EA0274D2B81E0860046B1C1 /* SceneDelegate.swift in Sources */,
-				9E8967312B81F1B300BAA53B /* template.stencil in Sources */,
 				9E8967272B81EC3900BAA53B /* UIViewController + Ext.swift in Sources */,
 				9EA027682B81E1E00046B1C1 /* DashboardPresenter.swift in Sources */,
 			);
@@ -408,7 +451,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
@@ -465,7 +508,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
@@ -477,6 +520,7 @@
 		};
 		9EA0275C2B81E0880046B1C1 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8F0A93FBFA6CA391F24C52AD /* Pods-OlympIt.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -488,7 +532,7 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -504,6 +548,7 @@
 		};
 		9EA0275D2B81E0880046B1C1 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0AC51871CB7F03BA96B7C926 /* Pods-OlympIt.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -515,7 +560,7 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -553,6 +598,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		9E23BC252B8A471200DA0D42 /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 7.11.0;
+			};
+		};
 		9E89671C2B81EBDE00BAA53B /* XCRemoteSwiftPackageReference "Moya" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Moya/Moya.git";
@@ -569,9 +622,30 @@
 				minimumVersion = 5.1.1;
 			};
 		};
+		9EB0B75A2B9CCC6F00B6671B /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.7.1;
+			};
+		};
+		9EB23C832B9CE4CA006A5283 /* XCRemoteSwiftPackageReference "BetterSegmentedControl" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/gmarm/BetterSegmentedControl";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.1;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		9E23BC262B8A471200DA0D42 /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 9E23BC252B8A471200DA0D42 /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
+		};
 		9E89671D2B81EBDE00BAA53B /* CombineMoya */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 9E89671C2B81EBDE00BAA53B /* XCRemoteSwiftPackageReference "Moya" */;
@@ -601,6 +675,21 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 9E8967282B81EC8300BAA53B /* XCRemoteSwiftPackageReference "NVActivityIndicatorView" */;
 			productName = NVActivityIndicatorViewExtended;
+		};
+		9EB0B75B2B9CCC6F00B6671B /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 9EB0B75A2B9CCC6F00B6671B /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
+		};
+		9EB0B75D2B9CCC6F00B6671B /* SnapKit-Dynamic */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 9EB0B75A2B9CCC6F00B6671B /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = "SnapKit-Dynamic";
+		};
+		9EB23C842B9CE4CA006A5283 /* BetterSegmentedControl */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 9EB23C832B9CE4CA006A5283 /* XCRemoteSwiftPackageReference "BetterSegmentedControl" */;
+			productName = BetterSegmentedControl;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

@@ -19,7 +19,7 @@ extension UIViewController {
         titleLabel.textColor = color
         titleLabel.text = text
         titleLabel.textAlignment = .left
-        titleLabel.font = .systemFont(ofSize: 24, weight: .semibold)
+        titleLabel.font = .systemFont(ofSize: 24, weight: .bold)
         titleLabel.translatesAutoresizingMaskIntoConstraints = false
         
         self.navigationItem.titleView = titleLabel
