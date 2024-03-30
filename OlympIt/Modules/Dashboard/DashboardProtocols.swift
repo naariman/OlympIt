@@ -27,5 +27,4 @@ protocol DashboardInteractorProtocol: AnyObject {
 //MARK: View -
 protocol DashboardViewProtocol: AnyObject {
     var presenter: DashboardPresenterProtocol?  { get set }
-    func setupUI()
 }

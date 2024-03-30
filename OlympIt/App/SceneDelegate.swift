@@ -29,21 +29,7 @@ final class SceneDelegate: UIResponder,
 private extension SceneDelegate {
     
     func getViewController() -> UIViewController {
-        switch UserSettings().userStatus {
-            
-        case .displayApp:
-            
-            return UINavigationController(
-                rootViewController: DashboardRouter.createModule()
-            )
-            
-        case .displayOnboarding:
-            
-//            return OnbordingRouter.createModule()
-            return UINavigationController(
-                rootViewController: DashboardRouter.createModule()
-            )
-        }
+        return DashboardRouter.createModule()
     }
     
 }

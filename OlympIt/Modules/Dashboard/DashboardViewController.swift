@@ -30,6 +30,11 @@ final class DashboardViewController: UIViewController,
                                      DashboardViewProtocol,
                                      LoadableViewController {
     
+    enum Constants {
+        static let subtitleText = "Что будем учить сегодня?"
+        static let welcome = "Добро пожаловать!"
+    }
+    
 	var presenter: DashboardPresenterProtocol?
 
     private let segmentedControl = BetterSegmentedControl(
@@ -42,15 +47,13 @@ final class DashboardViewController: UIViewController,
         options:[.backgroundColor(.darkGray),
                  .indicatorViewBackgroundColor(.red),
         .cornerRadius(12.0),
-        .animationSpringDamping(1.5)
-        ]
+        .animationSpringDamping(1.5)]
     )
     
     private let subtitleLabel: UILabel = {
        let label = UILabel()
-        label.textColor = AppColor._727274.uiColor
         label.font = .systemFont(ofSize: 14)
-        label.text = "Что будем учить сегодня?"
+        label.text = Constants.subtitleText
         return label
     }()
     
@@ -62,22 +65,21 @@ final class DashboardViewController: UIViewController,
 	override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
-        setupNavigationControl()
     }
 }
 
 // MARK: Setup UI
-extension DashboardViewController {
+private extension DashboardViewController {
     
     func setupNavigationBar() {
         setLeftAlignedNavigationItemTitle(
-            text: "Добро пожаловать!",
+            text: Constants.welcome,
             color: .white
         )
     }
     
     func setupUI() {
-        view.backgroundColor = AppColor.main37343B.uiColor
+        view.backgroundColor = .gray
         view.addSubviews(
             subtitleLabel,
             segmentedControl
@@ -86,7 +88,7 @@ extension DashboardViewController {
         segmentedControl.addTarget(
             self,
             action: #selector(
-                DashboardViewController.navigationSegmentedControlValueChanged(_:)
+                DashboardViewController.navigationSegmentedControlValueChanged
             ),
             for: .valueChanged
         )
@@ -104,13 +106,9 @@ extension DashboardViewController {
         }
     }
     
-    func setupNavigationControl() {
-    
-    }
-    
 }
 
-// MARK: - s
+// MARK: - Segmented Control processing
 private extension DashboardViewController {
     func configureData() {}
     
