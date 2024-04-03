@@ -32,6 +32,7 @@
 		9EB0B75E2B9CCC6F00B6671B /* SnapKit-Dynamic in Frameworks */ = {isa = PBXBuildFile; productRef = 9EB0B75D2B9CCC6F00B6671B /* SnapKit-Dynamic */; };
 		9EB0B7602B9CCE9400B6671B /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EB0B75F2B9CCE9400B6671B /* UIView+Extension.swift */; };
 		9EB23C852B9CE4CA006A5283 /* BetterSegmentedControl in Frameworks */ = {isa = PBXBuildFile; productRef = 9EB23C842B9CE4CA006A5283 /* BetterSegmentedControl */; };
+		9ED030BA2BBDD98100E6001F /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ED030B92BBDD98100E6001F /* UIColor+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -52,6 +53,7 @@
 		9EA027662B81E1E00046B1C1 /* DashboardProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardProtocols.swift; sourceTree = "<group>"; };
 		9EA027672B81E1E00046B1C1 /* DashboardInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardInteractor.swift; sourceTree = "<group>"; };
 		9EB0B75F2B9CCE9400B6671B /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
+		9ED030B92BBDD98100E6001F /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +98,7 @@
 			children = (
 				9E8967262B81EC3900BAA53B /* UIViewController+Extension.swift */,
 				9EB0B75F2B9CCE9400B6671B /* UIView+Extension.swift */,
+				9ED030B92BBDD98100E6001F /* UIColor+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -293,6 +296,7 @@
 				9E8967372B820A1000BAA53B /* LoadableViewController.swift in Sources */,
 				9E8967192B81E5AC00BAA53B /* UserDefault.swift in Sources */,
 				9EA0274D2B81E0860046B1C1 /* SceneDelegate.swift in Sources */,
+				9ED030BA2BBDD98100E6001F /* UIColor+Extension.swift in Sources */,
 				9E8967272B81EC3900BAA53B /* UIViewController+Extension.swift in Sources */,
 				9EA027682B81E1E00046B1C1 /* DashboardPresenter.swift in Sources */,
 			);
