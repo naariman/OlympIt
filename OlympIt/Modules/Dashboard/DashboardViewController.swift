@@ -33,28 +33,59 @@ final class DashboardViewController: UIViewController,
     enum Constants {
         static let subtitleText = "Что будем учить сегодня?"
         static let welcome = "Добро пожаловать!"
+        static let materials = "Материалы"
     }
     
+    var selected: LessonType = .exam {
+        didSet {
+            collectionView.reloadData()
+        }
+    }
+     
 	var presenter: DashboardPresenterProtocol?
-
+    
+    private let titleLabel: UILabel = {
+        let label = UILabel()
+        label.font = .systemFont(ofSize: 28, weight: .bold)
+        label.text = Constants.welcome
+        label.textColor = .white
+        return label
+    }()
+    
     private let segmentedControl = BetterSegmentedControl(
         frame: .zero,
         segments: LabelSegment.segments(
             withTitles: LessonType.allCases.map { $0.title },
-            normalTextColor: .lightGray,
+            normalFont: .systemFont(ofSize: 18, weight: .semibold),
+            normalTextColor: ._727274,
+            selectedFont: .systemFont(ofSize: 18, weight: .semibold),
             selectedTextColor: .white
         ),
-        options:[.backgroundColor(.darkGray),
-                 .indicatorViewBackgroundColor(.red),
+        options:[.backgroundColor(._1E1E1E),
+                 .indicatorViewBackgroundColor(._404043),
         .cornerRadius(12.0),
         .animationSpringDamping(1.5)]
     )
     
-    private let subtitleLabel: UILabel = {
+    private let lessonsTitleLabel: UILabel = {
        let label = UILabel()
-        label.font = .systemFont(ofSize: 14)
-        label.text = Constants.subtitleText
+        label.text = Constants.materials
+        label.textColor = .white
+        label.font = .systemFont(ofSize: 24, weight: .semibold)
         return label
+    }()
+    
+    private lazy var collectionView: UICollectionView = {
+        let layout = UICollectionViewFlowLayout()
+        layout.scrollDirection = .horizontal
+        layout.itemSize = .init(width: 120, height: 120)
+        
+        let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
+        collectionView.dataSource = self
+        collectionView.delegate = self
+        collectionView.showsHorizontalScrollIndicator = false
+        collectionView.contentInset = UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
+        return collectionView
     }()
     
     override func viewWillAppear(_ animated: Bool) {
@@ -79,10 +110,11 @@ private extension DashboardViewController {
     }
     
     func setupUI() {
-        view.backgroundColor = .gray
+        view.backgroundColor = ._37343B
         view.addSubviews(
-            subtitleLabel,
-            segmentedControl
+            titleLabel,
+            segmentedControl,
+            lessonsTitleLabel
         )
     
         segmentedControl.addTarget(
@@ -92,17 +124,21 @@ private extension DashboardViewController {
             ),
             for: .valueChanged
         )
-
         
-        subtitleLabel.snp.makeConstraints { make in
-            make.top.equalTo(view.safeAreaLayoutGuide.snp.top)
+        titleLabel.snp.makeConstraints { make in
+            make.top.equalTo(view.safeAreaLayoutGuide.snp.top).offset(8)
             make.centerX.equalToSuperview()
         }
         
         segmentedControl.snp.makeConstraints { make in
-            make.top.equalTo(subtitleLabel.snp.bottom).offset(32)
+            make.top.equalTo(titleLabel.snp.bottom).offset(24)
             make.leading.trailing.equalToSuperview().inset(32)
             make.height.equalTo(50)
+        }
+        
+        lessonsTitleLabel.snp.makeConstraints { make in
+            make.top.equalTo(segmentedControl.snp.bottom).offset(24)
+            make.leading.equalTo(16)
         }
     }
     
@@ -117,10 +153,24 @@ private extension DashboardViewController {
         _ sender: BetterSegmentedControl
     ) {
         if sender.index == 0 {
-            view.backgroundColor = .white
+
         } else {
-            view.backgroundColor = .darkGray
+    
         }
     }
     
+}
+
+// MARK: - UICollectionView
+extension DashboardViewController: UICollectionViewDataSource, UICollectionViewDelegate {
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        switch selected {
+            
+        }
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        <#code#>
+    }
 }

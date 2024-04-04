@@ -16,7 +16,8 @@ protocol DashboardWireframeProtocol: AnyObject {
 }
 //MARK: Presenter -
 protocol DashboardPresenterProtocol: AnyObject {
-
+    var examLessons: [ExamLesson] { get set }
+    var olympLessons: [OlymLesson] { get  set}
 }
 
 //MARK: Interactor -

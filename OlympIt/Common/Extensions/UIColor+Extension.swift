@@ -23,6 +23,10 @@ public extension UIColor {
     
     static var _252527: UIColor {
         return UIColor(hex: 0x252527)
+    }  
+    
+    static var _37343B: UIColor {
+        return UIColor(hex: 0x37343B)
     }
 
     convenience init(hex: UInt) {

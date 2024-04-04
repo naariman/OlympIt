@@ -33,6 +33,9 @@
 		9EB0B7602B9CCE9400B6671B /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EB0B75F2B9CCE9400B6671B /* UIView+Extension.swift */; };
 		9EB23C852B9CE4CA006A5283 /* BetterSegmentedControl in Frameworks */ = {isa = PBXBuildFile; productRef = 9EB23C842B9CE4CA006A5283 /* BetterSegmentedControl */; };
 		9ED030BA2BBDD98100E6001F /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ED030B92BBDD98100E6001F /* UIColor+Extension.swift */; };
+		9ED030BD2BBDE08200E6001F /* LessonCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ED030BC2BBDE08200E6001F /* LessonCollectionViewCell.swift */; };
+		9ED030BF2BBDE0BA00E6001F /* ReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ED030BE2BBDE0BA00E6001F /* ReusableView.swift */; };
+		9ED030C32BBDE4F500E6001F /* LessonsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ED030C22BBDE4F500E6001F /* LessonsModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -54,6 +57,9 @@
 		9EA027672B81E1E00046B1C1 /* DashboardInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardInteractor.swift; sourceTree = "<group>"; };
 		9EB0B75F2B9CCE9400B6671B /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
 		9ED030B92BBDD98100E6001F /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
+		9ED030BC2BBDE08200E6001F /* LessonCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LessonCollectionViewCell.swift; sourceTree = "<group>"; };
+		9ED030BE2BBDE0BA00E6001F /* ReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReusableView.swift; sourceTree = "<group>"; };
+		9ED030C22BBDE4F500E6001F /* LessonsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LessonsModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -125,6 +131,7 @@
 				9EA0275F2B81E0AA0046B1C1 /* App */,
 				9EA027612B81E0BA0046B1C1 /* Common */,
 				9EA027602B81E0B30046B1C1 /* Services */,
+				9ED030C12BBDE4DB00E6001F /* Data */,
 				9EA027622B81E0DB0046B1C1 /* Modules */,
 				9EA0275E2B81E0A30046B1C1 /* Resources */,
 			);
@@ -161,6 +168,7 @@
 		9EA027612B81E0BA0046B1C1 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				9ED030BB2BBDE06900E6001F /* Cells */,
 				9E098C392BB8387E0027BE71 /* Images */,
 				9EB0B7612B9CD13600B6671B /* BasicViews */,
 				9E8967352B820A0000BAA53B /* Loadable */,
@@ -193,8 +201,33 @@
 		9EB0B7612B9CD13600B6671B /* BasicViews */ = {
 			isa = PBXGroup;
 			children = (
+				9ED030BE2BBDE0BA00E6001F /* ReusableView.swift */,
 			);
 			path = BasicViews;
+			sourceTree = "<group>";
+		};
+		9ED030BB2BBDE06900E6001F /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				9ED030BC2BBDE08200E6001F /* LessonCollectionViewCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		9ED030C02BBDE4D200E6001F /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		9ED030C12BBDE4DB00E6001F /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				9ED030C02BBDE4D200E6001F /* Models */,
+				9ED030C22BBDE4F500E6001F /* LessonsModel.swift */,
+			);
+			path = Data;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -287,15 +320,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				9EA0274B2B81E0860046B1C1 /* AppDelegate.swift in Sources */,
+				9ED030C32BBDE4F500E6001F /* LessonsModel.swift in Sources */,
 				9EA027692B81E1E00046B1C1 /* DashboardRouter.swift in Sources */,
 				9EB0B7602B9CCE9400B6671B /* UIView+Extension.swift in Sources */,
 				9EA0276B2B81E1E00046B1C1 /* DashboardProtocols.swift in Sources */,
 				9EA0276C2B81E1E00046B1C1 /* DashboardInteractor.swift in Sources */,
 				9EA0276A2B81E1E00046B1C1 /* DashboardViewController.swift in Sources */,
+				9ED030BF2BBDE0BA00E6001F /* ReusableView.swift in Sources */,
 				9E23BBEC2B8A30BB00DA0D42 /* AppImages .swift in Sources */,
 				9E8967372B820A1000BAA53B /* LoadableViewController.swift in Sources */,
 				9E8967192B81E5AC00BAA53B /* UserDefault.swift in Sources */,
 				9EA0274D2B81E0860046B1C1 /* SceneDelegate.swift in Sources */,
+				9ED030BD2BBDE08200E6001F /* LessonCollectionViewCell.swift in Sources */,
 				9ED030BA2BBDD98100E6001F /* UIColor+Extension.swift in Sources */,
 				9E8967272B81EC3900BAA53B /* UIViewController+Extension.swift in Sources */,
 				9EA027682B81E1E00046B1C1 /* DashboardPresenter.swift in Sources */,
