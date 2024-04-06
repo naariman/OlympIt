@@ -36,6 +36,8 @@
 		9ED030BD2BBDE08200E6001F /* LessonCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ED030BC2BBDE08200E6001F /* LessonCollectionViewCell.swift */; };
 		9ED030BF2BBDE0BA00E6001F /* ReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ED030BE2BBDE0BA00E6001F /* ReusableView.swift */; };
 		9ED030C32BBDE4F500E6001F /* LessonsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ED030C22BBDE4F500E6001F /* LessonsModel.swift */; };
+		9EDC16642BC10C70006D212E /* UICollectionView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EDC16632BC10C70006D212E /* UICollectionView+Extension.swift */; };
+		9EDC16672BC192A2006D212E /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 9EDC16662BC192A2006D212E /* Kingfisher */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -60,6 +62,7 @@
 		9ED030BC2BBDE08200E6001F /* LessonCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LessonCollectionViewCell.swift; sourceTree = "<group>"; };
 		9ED030BE2BBDE0BA00E6001F /* ReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReusableView.swift; sourceTree = "<group>"; };
 		9ED030C22BBDE4F500E6001F /* LessonsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LessonsModel.swift; sourceTree = "<group>"; };
+		9EDC16632BC10C70006D212E /* UICollectionView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionView+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,6 +78,7 @@
 				9EB0B75E2B9CCC6F00B6671B /* SnapKit-Dynamic in Frameworks */,
 				9EB23C852B9CE4CA006A5283 /* BetterSegmentedControl in Frameworks */,
 				9E098C422BB83BA80027BE71 /* FirebaseAnalyticsWithoutAdIdSupport in Frameworks */,
+				9EDC16672BC192A2006D212E /* Kingfisher in Frameworks */,
 				9E098C442BB83BA80027BE71 /* FirebaseAppCheck in Frameworks */,
 				9E89672C2B81EC8300BAA53B /* NVActivityIndicatorViewExtended in Frameworks */,
 			);
@@ -105,6 +109,7 @@
 				9E8967262B81EC3900BAA53B /* UIViewController+Extension.swift */,
 				9EB0B75F2B9CCE9400B6671B /* UIView+Extension.swift */,
 				9ED030B92BBDD98100E6001F /* UIColor+Extension.swift */,
+				9EDC16632BC10C70006D212E /* UICollectionView+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -217,6 +222,7 @@
 		9ED030C02BBDE4D200E6001F /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				9ED030C22BBDE4F500E6001F /* LessonsModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -225,7 +231,6 @@
 			isa = PBXGroup;
 			children = (
 				9ED030C02BBDE4D200E6001F /* Models */,
-				9ED030C22BBDE4F500E6001F /* LessonsModel.swift */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -257,6 +262,7 @@
 				9E098C3F2BB83BA80027BE71 /* FirebaseAnalyticsSwift */,
 				9E098C412BB83BA80027BE71 /* FirebaseAnalyticsWithoutAdIdSupport */,
 				9E098C432BB83BA80027BE71 /* FirebaseAppCheck */,
+				9EDC16662BC192A2006D212E /* Kingfisher */,
 			);
 			productName = OlympIt;
 			productReference = 9E098C382BB8375C0027BE71 /* OlympIt.app */;
@@ -291,6 +297,7 @@
 				9EB0B75A2B9CCC6F00B6671B /* XCRemoteSwiftPackageReference "SnapKit" */,
 				9EB23C832B9CE4CA006A5283 /* XCRemoteSwiftPackageReference "BetterSegmentedControl" */,
 				9E098C3A2BB83BA80027BE71 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				9EDC16652BC192A2006D212E /* XCRemoteSwiftPackageReference "Kingfisher" */,
 			);
 			productRefGroup = 9EA0273E2B81E0860046B1C1;
 			projectDirPath = "";
@@ -335,6 +342,7 @@
 				9ED030BA2BBDD98100E6001F /* UIColor+Extension.swift in Sources */,
 				9E8967272B81EC3900BAA53B /* UIViewController+Extension.swift in Sources */,
 				9EA027682B81E1E00046B1C1 /* DashboardPresenter.swift in Sources */,
+				9EDC16642BC10C70006D212E /* UICollectionView+Extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -581,6 +589,14 @@
 				minimumVersion = 2.0.1;
 			};
 		};
+		9EDC16652BC192A2006D212E /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 7.11.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -633,6 +649,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 9EB23C832B9CE4CA006A5283 /* XCRemoteSwiftPackageReference "BetterSegmentedControl" */;
 			productName = BetterSegmentedControl;
+		};
+		9EDC16662BC192A2006D212E /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 9EDC16652BC192A2006D212E /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

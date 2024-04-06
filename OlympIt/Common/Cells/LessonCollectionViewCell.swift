@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 final class LessonCollectionViewCell: UICollectionViewCell,
                                       ReusableView {
@@ -19,6 +20,8 @@ final class LessonCollectionViewCell: UICollectionViewCell,
         let label = UILabel()
         label.textColor = .white
         label.font = .systemFont(ofSize: 16, weight: .medium)
+        label.numberOfLines = 0
+        label.textAlignment = .center
         return label
     }()
     override init(frame: CGRect) {
@@ -33,17 +36,24 @@ final class LessonCollectionViewCell: UICollectionViewCell,
         fatalError("init(coder:) has not been implemented")
     }
     
+    func configure(lessonModel: LessonModel) {
+        nameLabel.text = lessonModel.name
+        iconImageView.kf.setImage(with: lessonModel.image)
+    }
+    
     private func setupUI() {
         contentView.addSubview(iconImageView)
         contentView.addSubview(nameLabel)
         iconImageView.snp.makeConstraints { make in
-            make.center.equalToSuperview()
-            make.size.equalTo(64)
+            make.top.equalTo(16)
+            make.size.equalTo(52)
+            make.centerX.equalToSuperview()
         }
         
         nameLabel.snp.makeConstraints { make in
             make.top.equalTo(iconImageView.snp.bottom).offset(12)
             make.centerX.equalToSuperview()
+            make.leading.trailing.equalToSuperview()
         }
     }
     

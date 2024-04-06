@@ -27,8 +27,7 @@ enum LessonType: CaseIterable {
 }
 
 final class DashboardViewController: UIViewController,
-                                     DashboardViewProtocol,
-                                     LoadableViewController {
+                                     DashboardViewProtocol {
     
     enum Constants {
         static let subtitleText = "Что будем учить сегодня?"
@@ -81,10 +80,12 @@ final class DashboardViewController: UIViewController,
         layout.itemSize = .init(width: 120, height: 120)
         
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
+        collectionView.backgroundColor = ._37343B
         collectionView.dataSource = self
         collectionView.delegate = self
         collectionView.showsHorizontalScrollIndicator = false
         collectionView.contentInset = UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
+        collectionView.register(LessonCollectionViewCell.self)
         return collectionView
     }()
     
@@ -96,6 +97,12 @@ final class DashboardViewController: UIViewController,
 	override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
+        presenter?.viewDidLoad()
+    }
+    
+    func reloadData() {
+        hideLoadingAnimation()
+        collectionView.reloadData()
     }
 }
 
@@ -114,7 +121,8 @@ private extension DashboardViewController {
         view.addSubviews(
             titleLabel,
             segmentedControl,
-            lessonsTitleLabel
+            lessonsTitleLabel,
+            collectionView
         )
     
         segmentedControl.addTarget(
@@ -140,6 +148,12 @@ private extension DashboardViewController {
             make.top.equalTo(segmentedControl.snp.bottom).offset(24)
             make.leading.equalTo(16)
         }
+        
+        collectionView.snp.makeConstraints { make in
+            make.top.equalTo(lessonsTitleLabel.snp.bottom).offset(32)
+            make.leading.trailing.equalToSuperview()
+            make.height.equalTo(120)
+        }
     }
     
 }
@@ -153,9 +167,9 @@ private extension DashboardViewController {
         _ sender: BetterSegmentedControl
     ) {
         if sender.index == 0 {
-
+            presenter?.fetchOlymp()
         } else {
-    
+            presenter?.fetchExam()
         }
     }
     
@@ -166,11 +180,22 @@ extension DashboardViewController: UICollectionViewDataSource, UICollectionViewD
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         switch selected {
-            
+        case .exam:
+            presenter?.examLessons.count ?? 0
+        case .olympic:
+            presenter?.olympLessons.count ?? 0
         }
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        <#code#>
+        guard let presenter else { return UICollectionViewCell() }
+        let cell: LessonCollectionViewCell = collectionView.dequeueReusableCell(forIndexPath: indexPath)
+        switch selected {
+        case .exam:
+            cell.configure(lessonModel: presenter.examLessons[indexPath.row])
+        case .olympic:
+            cell.configure(lessonModel: presenter.olympLessons[indexPath.row])
+        }
+        return cell
     }
 }
