@@ -10,6 +10,20 @@
 
 import UIKit
 
-final class DashboardInteractor: DashboardInteractorProtocol {
+final class DashboardInteractor {
     weak var presenter: DashboardPresenterProtocol?
+    private let lessonService: LessonService = .init()
+}
+
+extension DashboardInteractor: DashboardInteractorProtocol {
+    func fetchLesson(with type: LessonType) {
+        lessonService.getLessonsList(with: type) { result in
+            switch result {
+            case .success(let response):
+                self.presenter?.didFetchLessons(with: response)
+            case .failure(let error):
+                self.presenter?.error(message: error.localizedDescription)
+            }
+        }
+    }
 }

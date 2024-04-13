@@ -12,20 +12,6 @@ import UIKit
 import SnapKit
 import BetterSegmentedControl
 
-enum LessonType: CaseIterable {
-    case olympic
-    case exam
-    
-    var title: String {
-        switch self {
-        case .exam:
-            return "ЕГЭ"
-        case .olympic:
-            return "Олимпиада"
-        }
-    }
-}
-
 final class DashboardViewController: UIViewController,
                                      DashboardViewProtocol {
     
@@ -34,13 +20,7 @@ final class DashboardViewController: UIViewController,
         static let welcome = "Добро пожаловать!"
         static let materials = "Материалы"
     }
-    
-    var selected: LessonType = .exam {
-        didSet {
-            collectionView.reloadData()
-        }
-    }
-     
+
 	var presenter: DashboardPresenterProtocol?
     
     private let titleLabel: UILabel = {
@@ -100,9 +80,13 @@ final class DashboardViewController: UIViewController,
         presenter?.viewDidLoad()
     }
     
-    func reloadData() {
+    func    reloadData() {
         hideLoadingAnimation()
         collectionView.reloadData()
+    }
+    
+    func showAlert(message: String) {
+        self.alert(message: message)
     }
 }
 
@@ -162,39 +146,39 @@ private extension DashboardViewController {
 private extension DashboardViewController {
     func configureData() {}
     
-    
     @objc func navigationSegmentedControlValueChanged(
         _ sender: BetterSegmentedControl
     ) {
         if sender.index == 0 {
-            presenter?.fetchOlymp()
+            presenter?.currentLessonType = .olymp
         } else {
-            presenter?.fetchExam()
+            presenter?.currentLessonType = .exam
         }
     }
-    
 }
 
 // MARK: - UICollectionView
-extension DashboardViewController: UICollectionViewDataSource, UICollectionViewDelegate {
+extension DashboardViewController: UICollectionViewDataSource,
+                                   UICollectionViewDelegate {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        switch selected {
+        guard let presenter else { return 0 }
+        switch presenter.currentLessonType {
+        case .olymp:
+            return presenter.olympLessons.count
         case .exam:
-            presenter?.examLessons.count ?? 0
-        case .olympic:
-            presenter?.olympLessons.count ?? 0
+            return presenter.examLessons.count
         }
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let presenter else { return UICollectionViewCell() }
         let cell: LessonCollectionViewCell = collectionView.dequeueReusableCell(forIndexPath: indexPath)
-        switch selected {
+        switch presenter.currentLessonType {
+        case .olymp:
+            cell.configure(lessonModel: presenter.olympLessons[indexPath.row])
         case .exam:
             cell.configure(lessonModel: presenter.examLessons[indexPath.row])
-        case .olympic:
-            cell.configure(lessonModel: presenter.olympLessons[indexPath.row])
         }
         return cell
     }

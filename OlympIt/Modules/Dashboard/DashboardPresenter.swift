@@ -15,20 +15,23 @@ final class DashboardPresenter {
     var interactor: DashboardInteractorProtocol?
     private let router: DashboardWireframeProtocol
     
-    var examLessons: Lessons = [] {
+    var examLessons: LessonsBaseList = [] {
         didSet {
-            view?.showLoading()
-            DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
-                self.view?.reloadData()
-            }
+            view?.reloadData()
         }
     }
-    
-    var olympLessons: Lessons = [] {
+    var olympLessons: LessonsBaseList = [] {
         didSet {
-            view?.showLoading()
-            DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
-                self.view?.reloadData()
+            view?.reloadData()
+        }
+    }
+    var currentLessonType: LessonType = .olymp {
+        didSet {
+            switch currentLessonType {
+            case .olymp:
+                fetchOlymp()
+            case .exam:
+                fetchExam()
             }
         }
     }
@@ -45,11 +48,28 @@ extension DashboardPresenter: DashboardPresenterProtocol {
         fetchOlymp()
     }
     
+    func didFetchLessons(with lessons: LessonsBaseList) {
+        switch currentLessonType {
+        case .exam:
+            examLessons = lessons
+        case .olymp:
+            olympLessons = lessons
+        }
+    }
+    
+    func error(message: String) {
+        view?.showAlert(message: message)
+    }
+}
+
+private extension DashboardPresenter {
     func fetchExam() {
-        examLessons = LessonModel.examsMock
+        examLessons.removeAll()
+        interactor?.fetchLesson(with: .exam)
     }
     
     func fetchOlymp() {
-        examLessons = LessonModel.olympMock
+        olympLessons.removeAll()
+        interactor?.fetchLesson(with: .olymp)
     }
 }
