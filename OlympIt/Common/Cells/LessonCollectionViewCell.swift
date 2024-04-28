@@ -41,6 +41,11 @@ final class LessonCollectionViewCell: UICollectionViewCell,
         iconImageView.kf.setImage(with: lessonModel.iconUrl)
     }
     
+    func configure(exam: Exam) {
+        nameLabel.text = exam.name
+        iconImageView.kf.setImage(with: exam.icon)
+    }
+    
     private func setupUI() {
         contentView.addSubview(iconImageView)
         contentView.addSubview(nameLabel)

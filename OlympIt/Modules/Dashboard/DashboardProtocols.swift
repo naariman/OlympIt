@@ -18,11 +18,11 @@ protocol DashboardWireframeProtocol: AnyObject {
 protocol DashboardPresenterProtocol: AnyObject {
     func viewDidLoad()
     
-    var examLessons: LessonsBaseList { get set }
+    var examLessons: ExamList { get set }
     var olympLessons: LessonsBaseList { get set }
     var currentLessonType: LessonType { get set }
     
-    func didFetchLessons(with lessons: LessonsBaseList)
+    func didFetchLessons(with lessons: ExamList)
     
     func error(message: String)
 }
@@ -30,7 +30,7 @@ protocol DashboardPresenterProtocol: AnyObject {
 //MARK: Interactor -
 protocol DashboardInteractorProtocol: AnyObject {
     var presenter: DashboardPresenterProtocol?  { get set }
-    func fetchLesson(with type: LessonType)
+    func fetchExams()
 }
 
 //MARK: View -

@@ -175,10 +175,10 @@ extension DashboardViewController: UICollectionViewDataSource,
         guard let presenter else { return UICollectionViewCell() }
         let cell: LessonCollectionViewCell = collectionView.dequeueReusableCell(forIndexPath: indexPath)
         switch presenter.currentLessonType {
-        case .olymp:
-            cell.configure(lessonModel: presenter.olympLessons[indexPath.row])
+        case .olymp: break
+//            cell.configure(lessonModel: presenter.olympLessons[indexPath.row])
         case .exam:
-            cell.configure(lessonModel: presenter.examLessons[indexPath.row])
+            cell.configure(exam: presenter.examLessons[indexPath.row])
         }
         return cell
     }

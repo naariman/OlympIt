@@ -15,16 +15,8 @@ final class DashboardPresenter {
     var interactor: DashboardInteractorProtocol?
     private let router: DashboardWireframeProtocol
     
-    var examLessons: LessonsBaseList = [] {
-        didSet {
-            view?.reloadData()
-        }
-    }
-    var olympLessons: LessonsBaseList = [] {
-        didSet {
-            view?.reloadData()
-        }
-    }
+    var examLessons: ExamList = []
+    var olympLessons: LessonsBaseList = []
     var currentLessonType: LessonType = .olymp {
         didSet {
             switch currentLessonType {
@@ -48,13 +40,14 @@ extension DashboardPresenter: DashboardPresenterProtocol {
         fetchOlymp()
     }
     
-    func didFetchLessons(with lessons: LessonsBaseList) {
+    func didFetchLessons(with lessons: ExamList) {
         switch currentLessonType {
         case .exam:
             examLessons = lessons
-        case .olymp:
-            olympLessons = lessons
+        case .olymp: break
+//            olympLessons = lessons
         }
+        view?.reloadData()
     }
     
     func error(message: String) {
@@ -64,12 +57,10 @@ extension DashboardPresenter: DashboardPresenterProtocol {
 
 private extension DashboardPresenter {
     func fetchExam() {
-        examLessons.removeAll()
-        interactor?.fetchLesson(with: .exam)
+        interactor?.fetchExams()
     }
     
     func fetchOlymp() {
-        olympLessons.removeAll()
-        interactor?.fetchLesson(with: .olymp)
+        
     }
 }
