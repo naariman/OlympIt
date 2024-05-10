@@ -40,4 +40,8 @@ final class LessonsListPresenter: LessonsListPresenterProtocol {
     func didFetchLessons(response: LessonsListOutput) {
         lessons = response
     }
+    
+    func didSelect(at index: Int) {
+        router.openPdf(with: lessons[index].pdf)
+    }
 }

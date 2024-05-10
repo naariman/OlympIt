@@ -11,6 +11,7 @@
 import UIKit
 
 final class LessonsListRouter: LessonsListWireframeProtocol {
+    
     weak var viewController: UIViewController?
     
     static func createModule(initialLessonType: InitialLessonType, type: LessonType, lessonId: String) -> UIViewController {
@@ -25,5 +26,10 @@ final class LessonsListRouter: LessonsListWireframeProtocol {
         router.viewController = view
         
         return view
+    }
+    
+    func openPdf(with url: URL) {
+        let vc = PdfRouter.createModule(pdfUrl: url)
+        viewController?.pushIfPossibleOrPresent(viewController: vc, animated: true, completion: nil)
     }
 }

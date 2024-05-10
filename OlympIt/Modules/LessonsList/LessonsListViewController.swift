@@ -33,7 +33,7 @@ final class LessonsListViewController: UIViewController,
     }
     
     private func setupViews() {
-        setupLeftNavigationBar(title: "Материалы", backButtonImage: UIImage(named: "chevron.left"))
+        navBar(title: "Материалы")
         view.backgroundColor = ._37343B
         tableView.backgroundColor = ._37343B
         view.addSubview(tableView)
@@ -56,5 +56,10 @@ extension LessonsListViewController: UITableViewDataSource, UITableViewDelegate 
         let cell: LessonDetailsCell = tableView.dequeueReusableCell(forIndexPath: indexPath)
         cell.configure(model: presenter.lessons[indexPath.row])
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        guard let presenter else { return }
+        presenter.didSelect(at: indexPath.row)
     }
 }

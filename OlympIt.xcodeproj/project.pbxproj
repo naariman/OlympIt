@@ -34,6 +34,12 @@
 		9EA0276C2B81E1E00046B1C1 /* DashboardInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EA027672B81E1E00046B1C1 /* DashboardInteractor.swift */; };
 		9EB05D8C2BECEF410056BDFB /* LessonListOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EB05D8B2BECEF410056BDFB /* LessonListOutput.swift */; };
 		9EB05D8E2BED40BA0056BDFB /* LessonDetailsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EB05D8D2BED40BA0056BDFB /* LessonDetailsCell.swift */; };
+		9EB05D952BEE1FAC0056BDFB /* PdfPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EB05D902BEE1FAC0056BDFB /* PdfPresenter.swift */; };
+		9EB05D962BEE1FAC0056BDFB /* PdfRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EB05D912BEE1FAC0056BDFB /* PdfRouter.swift */; };
+		9EB05D972BEE1FAC0056BDFB /* PdfViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EB05D922BEE1FAC0056BDFB /* PdfViewController.swift */; };
+		9EB05D982BEE1FAC0056BDFB /* PdfProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EB05D932BEE1FAC0056BDFB /* PdfProtocols.swift */; };
+		9EB05D992BEE1FAC0056BDFB /* PdfInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EB05D942BEE1FAC0056BDFB /* PdfInteractor.swift */; };
+		9EB05D9B2BEE243C0056BDFB /* OTWebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EB05D9A2BEE243C0056BDFB /* OTWebView.swift */; };
 		9EB0B75C2B9CCC6F00B6671B /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 9EB0B75B2B9CCC6F00B6671B /* SnapKit */; };
 		9EB0B75E2B9CCC6F00B6671B /* SnapKit-Dynamic in Frameworks */ = {isa = PBXBuildFile; productRef = 9EB0B75D2B9CCC6F00B6671B /* SnapKit-Dynamic */; };
 		9EB0B7602B9CCE9400B6671B /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EB0B75F2B9CCE9400B6671B /* UIView+Extension.swift */; };
@@ -74,6 +80,12 @@
 		9EA027672B81E1E00046B1C1 /* DashboardInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardInteractor.swift; sourceTree = "<group>"; };
 		9EB05D8B2BECEF410056BDFB /* LessonListOutput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LessonListOutput.swift; sourceTree = "<group>"; };
 		9EB05D8D2BED40BA0056BDFB /* LessonDetailsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LessonDetailsCell.swift; sourceTree = "<group>"; };
+		9EB05D902BEE1FAC0056BDFB /* PdfPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PdfPresenter.swift; sourceTree = "<group>"; };
+		9EB05D912BEE1FAC0056BDFB /* PdfRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PdfRouter.swift; sourceTree = "<group>"; };
+		9EB05D922BEE1FAC0056BDFB /* PdfViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PdfViewController.swift; sourceTree = "<group>"; };
+		9EB05D932BEE1FAC0056BDFB /* PdfProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PdfProtocols.swift; sourceTree = "<group>"; };
+		9EB05D942BEE1FAC0056BDFB /* PdfInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PdfInteractor.swift; sourceTree = "<group>"; };
+		9EB05D9A2BEE243C0056BDFB /* OTWebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTWebView.swift; sourceTree = "<group>"; };
 		9EB0B75F2B9CCE9400B6671B /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
 		9EBF02892BEAA6CC006389D4 /* LessonsRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LessonsRepository.swift; sourceTree = "<group>"; };
 		9EBF028C2BEBE00E006389D4 /* LessonsListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LessonsListPresenter.swift; sourceTree = "<group>"; };
@@ -229,6 +241,7 @@
 		9EA027622B81E0DB0046B1C1 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				9EB05D8F2BEE1F860056BDFB /* Pdf */,
 				9EBF029A2BEBE7B6006389D4 /* BottomSheet */,
 				9EBF028B2BEBDF29006389D4 /* LessonsList */,
 				9EA0276D2B81E2120046B1C1 /* Dashboard */,
@@ -248,10 +261,23 @@
 			path = Dashboard;
 			sourceTree = "<group>";
 		};
+		9EB05D8F2BEE1F860056BDFB /* Pdf */ = {
+			isa = PBXGroup;
+			children = (
+				9EB05D902BEE1FAC0056BDFB /* PdfPresenter.swift */,
+				9EB05D912BEE1FAC0056BDFB /* PdfRouter.swift */,
+				9EB05D922BEE1FAC0056BDFB /* PdfViewController.swift */,
+				9EB05D932BEE1FAC0056BDFB /* PdfProtocols.swift */,
+				9EB05D942BEE1FAC0056BDFB /* PdfInteractor.swift */,
+			);
+			path = Pdf;
+			sourceTree = "<group>";
+		};
 		9EB0B7612B9CD13600B6671B /* BasicViews */ = {
 			isa = PBXGroup;
 			children = (
 				9ED030BE2BBDE0BA00E6001F /* ReusableView.swift */,
+				9EB05D9A2BEE243C0056BDFB /* OTWebView.swift */,
 			);
 			path = BasicViews;
 			sourceTree = "<group>";
@@ -423,24 +449,30 @@
 				9EF403332BCAFCD800B78D97 /* RequestDecoder.swift in Sources */,
 				9EB05D8C2BECEF410056BDFB /* LessonListOutput.swift in Sources */,
 				9EBF02992BEBE7AE006389D4 /* SelectableBottomSheet.swift in Sources */,
+				9EB05D9B2BEE243C0056BDFB /* OTWebView.swift in Sources */,
 				9EB05D8E2BED40BA0056BDFB /* LessonDetailsCell.swift in Sources */,
 				9EBF028A2BEAA6CC006389D4 /* LessonsRepository.swift in Sources */,
 				9EA0276B2B81E1E00046B1C1 /* DashboardProtocols.swift in Sources */,
 				9EBF02922BEBE00E006389D4 /* LessonsListRouter.swift in Sources */,
+				9EB05D982BEE1FAC0056BDFB /* PdfProtocols.swift in Sources */,
 				9EBF02932BEBE00E006389D4 /* LessonsListViewController.swift in Sources */,
 				9EA0276C2B81E1E00046B1C1 /* DashboardInteractor.swift in Sources */,
 				9EA0276A2B81E1E00046B1C1 /* DashboardViewController.swift in Sources */,
 				9ED030BF2BBDE0BA00E6001F /* ReusableView.swift in Sources */,
 				9E23BBEC2B8A30BB00DA0D42 /* AppImages .swift in Sources */,
+				9EB05D952BEE1FAC0056BDFB /* PdfPresenter.swift in Sources */,
 				9EBF029D2BEBED04006389D4 /* LessonType.swift in Sources */,
+				9EB05D992BEE1FAC0056BDFB /* PdfInteractor.swift in Sources */,
 				9E8967372B820A1000BAA53B /* LoadableViewController.swift in Sources */,
 				9EF4032D2BCAF64100B78D97 /* URLBase.swift in Sources */,
 				9E8967192B81E5AC00BAA53B /* UserDefault.swift in Sources */,
 				9EA0274D2B81E0860046B1C1 /* SceneDelegate.swift in Sources */,
 				9ED030BD2BBDE08200E6001F /* LessonCollectionViewCell.swift in Sources */,
 				9ED030BA2BBDD98100E6001F /* UIColor+Extension.swift in Sources */,
+				9EB05D962BEE1FAC0056BDFB /* PdfRouter.swift in Sources */,
 				9E8967272B81EC3900BAA53B /* UIViewController+Extension.swift in Sources */,
 				9EA027682B81E1E00046B1C1 /* DashboardPresenter.swift in Sources */,
+				9EB05D972BEE1FAC0056BDFB /* PdfViewController.swift in Sources */,
 				9EBF02912BEBE00E006389D4 /* LessonsListPresenter.swift in Sources */,
 				9EDC16642BC10C70006D212E /* UICollectionView+Extension.swift in Sources */,
 			);

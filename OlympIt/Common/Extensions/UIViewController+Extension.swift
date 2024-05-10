@@ -42,6 +42,13 @@ extension UIViewController {
 
 extension UIViewController {
     
+    func navBar(title: String) {
+        navigationController?.navigationBar.tintColor = .white
+        let backButton = UIBarButtonItem()
+        backButton.title = title
+        navigationItem.backBarButtonItem = backButton
+    }
+    
     
     func setLeftAlignedNavigationItemTitle(text: String,
                                            color: UIColor,
@@ -94,7 +101,6 @@ extension UIViewController {
         view.removeFromSuperview()
         removeFromParent()
     }
-    
     
     func configureBackButtonItem(image: UIImage = UIImage(systemName: "chevron.left")!,
                                  title: String = "") {

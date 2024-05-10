@@ -42,7 +42,7 @@ final class DashboardRouter: DashboardWireframeProtocol {
     func openLessonsList(initialLessonType: InitialLessonType,type: LessonType, lessonId: String) {
         let vc = LessonsListRouter.createModule(initialLessonType: initialLessonType, type: type, lessonId: lessonId)
         viewController?.dismiss(animated: true)
-        viewController?.navigationController?.pushViewController(vc, animated: true)
+        viewController?.pushIfPossibleOrPresent(viewController: vc, animated: true, completion: nil)
     }
     
 }

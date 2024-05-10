@@ -12,12 +12,13 @@ import Foundation
 
 //MARK: Wireframe -
 protocol LessonsListWireframeProtocol: AnyObject {
-
+    func openPdf(with url: URL)
 }
 //MARK: Presenter -
 protocol LessonsListPresenterProtocol: AnyObject {
     var lessons: LessonsListOutput { get set }
     func viewDidLoad()
+    func didSelect(at index: Int)
     func didFetchLessons(response: LessonsListOutput)
 }
 

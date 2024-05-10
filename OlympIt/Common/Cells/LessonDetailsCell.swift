@@ -77,6 +77,7 @@ private extension LessonDetailsCell {
     func setupConstraints() {
         containerView.snp.makeConstraints { make in
             make.edges.equalToSuperview().inset(16)
+            make.height.greaterThanOrEqualTo(110)
         }
         
         titleLabel.snp.makeConstraints { make in
