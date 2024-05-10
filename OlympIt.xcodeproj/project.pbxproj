@@ -40,6 +40,7 @@
 		9EB05D982BEE1FAC0056BDFB /* PdfProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EB05D932BEE1FAC0056BDFB /* PdfProtocols.swift */; };
 		9EB05D992BEE1FAC0056BDFB /* PdfInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EB05D942BEE1FAC0056BDFB /* PdfInteractor.swift */; };
 		9EB05D9B2BEE243C0056BDFB /* OTWebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EB05D9A2BEE243C0056BDFB /* OTWebView.swift */; };
+		9EB05D9E2BEEB8DF0056BDFB /* PanModal in Frameworks */ = {isa = PBXBuildFile; productRef = 9EB05D9D2BEEB8DF0056BDFB /* PanModal */; };
 		9EB0B75C2B9CCC6F00B6671B /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 9EB0B75B2B9CCC6F00B6671B /* SnapKit */; };
 		9EB0B75E2B9CCC6F00B6671B /* SnapKit-Dynamic in Frameworks */ = {isa = PBXBuildFile; productRef = 9EB0B75D2B9CCC6F00B6671B /* SnapKit-Dynamic */; };
 		9EB0B7602B9CCE9400B6671B /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EB0B75F2B9CCE9400B6671B /* UIView+Extension.swift */; };
@@ -109,6 +110,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9EB05D9E2BEEB8DF0056BDFB /* PanModal in Frameworks */,
 				9E543E032BC27662002B6A5C /* RxMoya in Frameworks */,
 				9EB0B75C2B9CCC6F00B6671B /* SnapKit in Frameworks */,
 				9E89672A2B81EC8300BAA53B /* NVActivityIndicatorView in Frameworks */,
@@ -377,6 +379,7 @@
 				9E543E002BC27662002B6A5C /* ReactiveMoya */,
 				9E543E022BC27662002B6A5C /* RxMoya */,
 				9E2AC1B62BDEBB8D00803374 /* FirebaseFirestore */,
+				9EB05D9D2BEEB8DF0056BDFB /* PanModal */,
 			);
 			productName = OlympIt;
 			productReference = 9E098C382BB8375C0027BE71 /* OlympIt.app */;
@@ -413,6 +416,7 @@
 				9E098C3A2BB83BA80027BE71 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 				9EDC16652BC192A2006D212E /* XCRemoteSwiftPackageReference "Kingfisher" */,
 				9E543DFB2BC27662002B6A5C /* XCRemoteSwiftPackageReference "Moya" */,
+				9EB05D9C2BEEB8DF0056BDFB /* XCRemoteSwiftPackageReference "PanModal" */,
 			);
 			productRefGroup = 9EA0273E2B81E0860046B1C1;
 			projectDirPath = "";
@@ -713,6 +717,14 @@
 				minimumVersion = 5.1.1;
 			};
 		};
+		9EB05D9C2BEEB8DF0056BDFB /* XCRemoteSwiftPackageReference "PanModal" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/slackhq/PanModal";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.2.7;
+			};
+		};
 		9EB0B75A2B9CCC6F00B6671B /* XCRemoteSwiftPackageReference "SnapKit" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
@@ -799,6 +811,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 9E8967282B81EC8300BAA53B /* XCRemoteSwiftPackageReference "NVActivityIndicatorView" */;
 			productName = NVActivityIndicatorViewExtended;
+		};
+		9EB05D9D2BEEB8DF0056BDFB /* PanModal */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 9EB05D9C2BEEB8DF0056BDFB /* XCRemoteSwiftPackageReference "PanModal" */;
+			productName = PanModal;
 		};
 		9EB0B75B2B9CCC6F00B6671B /* SnapKit */ = {
 			isa = XCSwiftPackageProductDependency;

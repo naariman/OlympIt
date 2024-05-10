@@ -20,6 +20,7 @@ protocol LessonsListPresenterProtocol: AnyObject {
     func viewDidLoad()
     func didSelect(at index: Int)
     func didFetchLessons(response: LessonsListOutput)
+    func search(searchText: String)
 }
 
 //MARK: Interactor -

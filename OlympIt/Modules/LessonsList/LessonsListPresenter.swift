@@ -18,6 +18,7 @@ final class LessonsListPresenter: LessonsListPresenterProtocol {
     private let lessonId: String
     private let type: LessonType
     private let initialLessonType: InitialLessonType
+    var initialLessons: LessonsListOutput = []
     var lessons: LessonsListOutput = [] {
         didSet {
             view?.reload()
@@ -39,9 +40,21 @@ final class LessonsListPresenter: LessonsListPresenterProtocol {
     
     func didFetchLessons(response: LessonsListOutput) {
         lessons = response
+        initialLessons = lessons
     }
     
     func didSelect(at index: Int) {
         router.openPdf(with: lessons[index].pdf)
+    }
+    
+    func search(searchText: String) {
+        if searchText.isEmpty {
+            lessons = initialLessons
+        } else {
+            let filteredLessons = initialLessons.filter { lesson in
+                return lesson.name.localizedCaseInsensitiveContains(searchText)
+            }
+            lessons = filteredLessons
+        }
     }
 }

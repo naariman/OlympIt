@@ -6,8 +6,7 @@
 //
 
 import UIKit
-
-
+import PanModal
 
 protocol SelectableBottomSheetDelegate: AnyObject {
     func didSelect(type: LessonType)
@@ -21,8 +20,8 @@ final class SelectableBottomSheet: UIViewController {
         button.addTarget(self, action: #selector(theoryDidTap), for: .touchUpInside)
         button.backgroundColor = ._252527
         button.setTitle("Теория", for: .normal)
-        button.titleLabel?.font = .systemFont(ofSize: 28, weight: .semibold)
-        button.setTitleColor(._727274, for: .normal)
+        button.titleLabel?.font = .systemFont(ofSize: 24, weight: .semibold)
+        button.setTitleColor(.white, for: .normal)
         button.layer.cornerRadius = 12
         return button
     }()
@@ -32,8 +31,8 @@ final class SelectableBottomSheet: UIViewController {
         button.addTarget(self, action: #selector(practiceDidTap), for: .touchUpInside)
         button.backgroundColor = ._252527
         button.setTitle("Практика", for: .normal)
-        button.titleLabel?.font = .systemFont(ofSize: 28, weight: .semibold)
-        button.setTitleColor(._727274, for: .normal)
+        button.titleLabel?.font = .systemFont(ofSize: 24, weight: .semibold)
+        button.setTitleColor(.white, for: .normal)
         button.layer.cornerRadius = 12
         return button
     }()
@@ -82,5 +81,16 @@ private extension SelectableBottomSheet {
     
     @objc func practiceDidTap() {
         delegate?.didSelect(type: .practice)
+    }
+}
+
+extension SelectableBottomSheet: PanModalPresentable {
+
+    var panScrollable: UIScrollView? {
+        return nil
+    }
+
+    var shortFormHeight: PanModalHeight {
+        return .contentHeight(284)
     }
 }

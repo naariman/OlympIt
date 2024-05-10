@@ -11,7 +11,7 @@
 import UIKit
 
 final class LessonsListViewController: UIViewController,
-                                       LessonsListViewProtocol {
+                                       LessonsListViewProtocol, UISearchControllerDelegate {
 	var presenter: LessonsListPresenterProtocol?
     private lazy var tableView: UITableView = {
         let tableView = UITableView()
@@ -20,6 +20,12 @@ final class LessonsListViewController: UIViewController,
         tableView.register(LessonDetailsCell.self)
         return tableView
     }()
+    
+    private var searchController: UISearchController = {
+        let viewController = UISearchController(searchResultsController: nil)
+        return viewController
+    }()
+    
     
 	override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,10 +39,21 @@ final class LessonsListViewController: UIViewController,
     }
     
     private func setupViews() {
-        navBar(title: "Материалы")
         view.backgroundColor = ._37343B
         tableView.backgroundColor = ._37343B
         view.addSubview(tableView)
+        setupNavigationBar()
+    }
+    
+    func setupNavigationBar() {
+        self.navigationController?.navigationBar.tintColor = .white
+        navigationItem.searchController = searchController
+        searchController.delegate = self
+        searchController.searchBar.delegate = self
+        searchController.searchBar.searchTextField.placeholder = "Что вы хотите найти?"
+        searchController.searchBar.searchTextField.tintColor = .white
+        searchController.searchBar.barStyle = .black
+        searchController.searchBar.searchTextField.textColor = .white
     }
     
     private func setupConstraints() {
@@ -61,5 +78,15 @@ extension LessonsListViewController: UITableViewDataSource, UITableViewDelegate 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         guard let presenter else { return }
         presenter.didSelect(at: indexPath.row)
+    }
+}
+
+extension LessonsListViewController: UISearchBarDelegate {
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        presenter?.search(searchText: searchText)
+    }
+    
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        tableView.reloadData()
     }
 }

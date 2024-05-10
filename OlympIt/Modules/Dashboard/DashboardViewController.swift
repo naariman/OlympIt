@@ -101,9 +101,9 @@ private extension DashboardViewController {
     }
     
     func setupUI() {
+        navBar(title: "Материалы")
         view.backgroundColor = ._37343B
         view.addSubviews(
-//            titleLabel,
             segmentedControl,
             lessonsTitleLabel,
             collectionView
@@ -116,12 +116,7 @@ private extension DashboardViewController {
             ),
             for: .valueChanged
         )
-        
-//        titleLabel.snp.makeConstraints { make in
-//            make.top.equalTo(view.safeAreaLayoutGuide.snp.top).offset(8)
-//            make.centerX.equalToSuperview()
-//        }
-        
+    
         segmentedControl.snp.makeConstraints { make in
             make.top.equalTo(view.safeAreaLayoutGuide.snp.top).offset(8)
             make.leading.trailing.equalToSuperview().inset(32)

@@ -29,14 +29,7 @@ final class DashboardRouter: DashboardWireframeProtocol {
     
     func openBottomSheet(executor: AnyObject) {
         let vc = SelectableBottomSheet(delegate: executor)
-        let nav = UINavigationController(rootViewController: vc)
-        nav.modalPresentationStyle = .pageSheet
-        
-        if let sheet = nav.sheetPresentationController {
-            sheet.detents = [.medium()]
-        }
-        
-        viewController?.present(nav, animated: true)
+        viewController?.navigationController?.presentPanModal(vc)
     }
     
     func openLessonsList(initialLessonType: InitialLessonType,type: LessonType, lessonId: String) {
