@@ -14,20 +14,16 @@ final class DashboardPresenter {
     weak private var view: DashboardViewProtocol?
     var interactor: DashboardInteractorProtocol?
     private let router: DashboardWireframeProtocol
+    private var selectedIndex = -1
     
-    var examLessons: ExamList = []
-    var olympLessons: LessonsBaseList = []
-    var currentLessonType: LessonType = .olymp {
+    var lessons: InitialLessonOutputList = []
+
+    var lessonType: InitialLessonType = .olymp {
         didSet {
-            switch currentLessonType {
-            case .olymp:
-                fetchOlymp()
-            case .exam:
-                fetchExam()
-            }
+            interactor?.fetchExams(by: lessonType)
         }
     }
-
+    
     init(interface: DashboardViewProtocol, interactor: DashboardInteractorProtocol?, router: DashboardWireframeProtocol) {
         self.view = interface
         self.interactor = interactor
@@ -36,31 +32,29 @@ final class DashboardPresenter {
 }
 
 extension DashboardPresenter: DashboardPresenterProtocol {
+    
     func viewDidLoad() {
-        fetchOlymp()
+        lessonType = .olymp
     }
     
-    func didFetchLessons(with lessons: ExamList) {
-        switch currentLessonType {
-        case .exam:
-            examLessons = lessons
-        case .olymp: break
-//            olympLessons = lessons
-        }
+    func didFetchLessons(with lessons: InitialLessonOutputList) {
+        self.lessons.removeAll()
+        self.lessons = lessons
         view?.reloadData()
     }
     
     func error(message: String) {
         view?.showAlert(message: message)
     }
+    
+    func didSelectItem(at index: Int) {
+        selectedIndex = index
+        router.openBottomSheet(executor: self)
+    }
 }
 
-private extension DashboardPresenter {
-    func fetchExam() {
-        interactor?.fetchExams()
-    }
-    
-    func fetchOlymp() {
-        
+extension DashboardPresenter: SelectableBottomSheetDelegate {
+    func didSelect(type: LessonType) {
+        router.openLessonsList(initialLessonType: lessonType, type: type, lessonId: lessons[selectedIndex].id)
     }
 }

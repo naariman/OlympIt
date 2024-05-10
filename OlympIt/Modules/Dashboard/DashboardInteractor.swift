@@ -12,12 +12,12 @@ import UIKit
 
 final class DashboardInteractor {
     weak var presenter: DashboardPresenterProtocol?
-    private let networkService: NetworkService = NetworkServiceImp()
+    private let repository: ILessonsRepository = LessonsRepositoryImpl()
 }
 
 extension DashboardInteractor: DashboardInteractorProtocol {
-    func fetchExams()  {
-        networkService.getExams { result in
+    func fetchExams(by type: InitialLessonType) {
+        repository.fetchInitialLessons(by: type) { result in
             switch result {
             case .success(let response):
                 self.presenter?.didFetchLessons(with: response)

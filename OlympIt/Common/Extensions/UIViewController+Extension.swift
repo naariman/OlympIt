@@ -9,6 +9,37 @@
 import UIKit
 import NVActivityIndicatorView
 
+
+extension UIViewController {
+    
+    func setupLeftNavigationBar(title: String, backButtonImage: UIImage?) {
+        // Create back button
+        let backButton = UIBarButtonItem(title: "Back", style: .plain, target: self, action: #selector(backButtonPressed))
+        if let image = backButtonImage {
+            backButton.image = image
+        }
+        self.navigationItem.leftBarButtonItem = backButton
+        
+        // Create title label
+        let titleLabel = UILabel()
+        titleLabel.text = title
+        titleLabel.font = UIFont.boldSystemFont(ofSize: 18)
+        titleLabel.textColor = UIColor.black
+        titleLabel.sizeToFit()
+        
+        // Create title view to hold the label
+        let titleView = UIView(frame: CGRect(x: 0, y: 0, width: titleLabel.frame.width, height: titleLabel.frame.height))
+        titleView.addSubview(titleLabel)
+        
+        // Set the title view as the navigation item's title view
+        self.navigationItem.titleView = titleView
+    }
+    
+    @objc func backButtonPressed() {
+        self.navigationController?.popViewController(animated: true)
+    }
+}
+
 extension UIViewController {
     
     
@@ -63,6 +94,7 @@ extension UIViewController {
         view.removeFromSuperview()
         removeFromParent()
     }
+    
     
     func configureBackButtonItem(image: UIImage = UIImage(systemName: "chevron.left")!,
                                  title: String = "") {

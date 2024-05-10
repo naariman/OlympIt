@@ -11,10 +11,10 @@
 import UIKit
 
 final class DashboardRouter: DashboardWireframeProtocol {
+    
     weak var viewController: UIViewController?
     
     static func createModule() -> UIViewController {
-        // Change to get view from storyboard if not using progammatic UI
         let view = DashboardViewController()
         let interactor = DashboardInteractor()
         let router = DashboardRouter()
@@ -26,4 +26,23 @@ final class DashboardRouter: DashboardWireframeProtocol {
         
         return view
     }
+    
+    func openBottomSheet(executor: AnyObject) {
+        let vc = SelectableBottomSheet(delegate: executor)
+        let nav = UINavigationController(rootViewController: vc)
+        nav.modalPresentationStyle = .pageSheet
+        
+        if let sheet = nav.sheetPresentationController {
+            sheet.detents = [.medium()]
+        }
+        
+        viewController?.present(nav, animated: true)
+    }
+    
+    func openLessonsList(initialLessonType: InitialLessonType,type: LessonType, lessonId: String) {
+        let vc = LessonsListRouter.createModule(initialLessonType: initialLessonType, type: type, lessonId: lessonId)
+        viewController?.dismiss(animated: true)
+        viewController?.navigationController?.pushViewController(vc, animated: true)
+    }
+    
 }

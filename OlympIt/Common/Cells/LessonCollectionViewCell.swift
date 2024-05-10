@@ -36,14 +36,9 @@ final class LessonCollectionViewCell: UICollectionViewCell,
         fatalError("init(coder:) has not been implemented")
     }
     
-    func configure(lessonModel: LessonBaseInfoModel) {
+    func configure(lessonModel: InitialLessonOutput) {
         nameLabel.text = lessonModel.name
         iconImageView.kf.setImage(with: lessonModel.iconUrl)
-    }
-    
-    func configure(exam: Exam) {
-        nameLabel.text = exam.name
-        iconImageView.kf.setImage(with: exam.icon)
     }
     
     private func setupUI() {

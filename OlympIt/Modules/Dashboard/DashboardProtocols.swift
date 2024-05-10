@@ -12,25 +12,25 @@ import Foundation
 
 //MARK: Wireframe -
 protocol DashboardWireframeProtocol: AnyObject {
-
+    func openBottomSheet(executor: AnyObject)
+    func openLessonsList(initialLessonType: InitialLessonType, type: LessonType, lessonId: String)
 }
 //MARK: Presenter -
 protocol DashboardPresenterProtocol: AnyObject {
     func viewDidLoad()
+    var lessons: InitialLessonOutputList { get }
+    var lessonType: InitialLessonType { get set }
     
-    var examLessons: ExamList { get set }
-    var olympLessons: LessonsBaseList { get set }
-    var currentLessonType: LessonType { get set }
-    
-    func didFetchLessons(with lessons: ExamList)
+    func didFetchLessons(with lessons: InitialLessonOutputList)
     
     func error(message: String)
+    func didSelectItem(at index: Int)
 }
 
 //MARK: Interactor -
 protocol DashboardInteractorProtocol: AnyObject {
     var presenter: DashboardPresenterProtocol?  { get set }
-    func fetchExams()
+    func fetchExams(by type: InitialLessonType)
 }
 
 //MARK: View -

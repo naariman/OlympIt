@@ -34,7 +34,7 @@ final class DashboardViewController: UIViewController,
     private let segmentedControl = BetterSegmentedControl(
         frame: .zero,
         segments: LabelSegment.segments(
-            withTitles: LessonType.allCases.map { $0.title },
+            withTitles: InitialLessonType.allCases.map { $0.dashboardTitle },
             normalFont: .systemFont(ofSize: 18, weight: .semibold),
             normalTextColor: ._727274,
             selectedFont: .systemFont(ofSize: 18, weight: .semibold),
@@ -80,7 +80,7 @@ final class DashboardViewController: UIViewController,
         presenter?.viewDidLoad()
     }
     
-    func    reloadData() {
+    func reloadData() {
         hideLoadingAnimation()
         collectionView.reloadData()
     }
@@ -103,7 +103,7 @@ private extension DashboardViewController {
     func setupUI() {
         view.backgroundColor = ._37343B
         view.addSubviews(
-            titleLabel,
+//            titleLabel,
             segmentedControl,
             lessonsTitleLabel,
             collectionView
@@ -117,13 +117,13 @@ private extension DashboardViewController {
             for: .valueChanged
         )
         
-        titleLabel.snp.makeConstraints { make in
-            make.top.equalTo(view.safeAreaLayoutGuide.snp.top).offset(8)
-            make.centerX.equalToSuperview()
-        }
+//        titleLabel.snp.makeConstraints { make in
+//            make.top.equalTo(view.safeAreaLayoutGuide.snp.top).offset(8)
+//            make.centerX.equalToSuperview()
+//        }
         
         segmentedControl.snp.makeConstraints { make in
-            make.top.equalTo(titleLabel.snp.bottom).offset(24)
+            make.top.equalTo(view.safeAreaLayoutGuide.snp.top).offset(8)
             make.leading.trailing.equalToSuperview().inset(32)
             make.height.equalTo(50)
         }
@@ -146,13 +146,11 @@ private extension DashboardViewController {
 private extension DashboardViewController {
     func configureData() {}
     
-    @objc func navigationSegmentedControlValueChanged(
-        _ sender: BetterSegmentedControl
-    ) {
+    @objc func navigationSegmentedControlValueChanged(_ sender: BetterSegmentedControl) {
         if sender.index == 0 {
-            presenter?.currentLessonType = .olymp
+            presenter?.lessonType = .olymp
         } else {
-            presenter?.currentLessonType = .exam
+            presenter?.lessonType = .exam
         }
     }
 }
@@ -162,24 +160,17 @@ extension DashboardViewController: UICollectionViewDataSource,
                                    UICollectionViewDelegate {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        guard let presenter else { return 0 }
-        switch presenter.currentLessonType {
-        case .olymp:
-            return presenter.olympLessons.count
-        case .exam:
-            return presenter.examLessons.count
-        }
+        presenter?.lessons.count ?? 0
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let presenter else { return UICollectionViewCell() }
         let cell: LessonCollectionViewCell = collectionView.dequeueReusableCell(forIndexPath: indexPath)
-        switch presenter.currentLessonType {
-        case .olymp: break
-//            cell.configure(lessonModel: presenter.olympLessons[indexPath.row])
-        case .exam:
-            cell.configure(exam: presenter.examLessons[indexPath.row])
-        }
+        cell.configure(lessonModel: presenter.lessons[indexPath.row])
         return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        presenter?.didSelectItem(at: indexPath.row)
     }
 }
