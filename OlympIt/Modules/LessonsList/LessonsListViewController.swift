@@ -26,12 +26,18 @@ final class LessonsListViewController: UIViewController,
         return viewController
     }()
     
-    
 	override func viewDidLoad() {
         super.viewDidLoad()
         presenter?.viewDidLoad()
         setupViews()
         setupConstraints()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        setupNavigationBar()
+        DispatchQueue.main.async {
+            self.searchController.isActive = true
+        }
     }
     
     func reload() {
@@ -42,7 +48,6 @@ final class LessonsListViewController: UIViewController,
         view.backgroundColor = ._37343B
         tableView.backgroundColor = ._37343B
         view.addSubview(tableView)
-        setupNavigationBar()
     }
     
     func setupNavigationBar() {
@@ -87,6 +92,6 @@ extension LessonsListViewController: UISearchBarDelegate {
     }
     
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
-        tableView.reloadData()
+        presenter?.search(searchText: "")
     }
 }

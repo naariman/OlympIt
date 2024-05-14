@@ -8,8 +8,8 @@
 import FirebaseFirestore
 
 enum InitialLessonType: String, CaseIterable {
-    case exam
     case olymp
+    case exam
     
     var collectionName: String {
         switch self {
@@ -41,6 +41,7 @@ struct InitialLessonOutput {
 protocol ILessonsRepository {
     func fetchInitialLessons(by type: InitialLessonType, completion: @escaping (Result<InitialLessonOutputList, Error>) -> Void)
     func fetchLessonsList(initialLessonType: InitialLessonType, type: LessonType, id: String, completion: @escaping (Result<LessonsListOutput, Error>) -> Void)
+    func getNews(completion: @escaping (Result<NewsListModel, Error>) -> Void)
 }
 
 final class LessonsRepositoryImpl {
@@ -76,7 +77,6 @@ extension LessonsRepositoryImpl: ILessonsRepository {
     }
     
     func fetchLessonsList(initialLessonType: InitialLessonType, type: LessonType, id: String, completion: @escaping (Result<LessonsListOutput, Error>) -> Void) {
-        print("/\(initialLessonType.collectionName)/\(id)/\(type.collectionName)")
         db.collection("/\(initialLessonType.collectionName)/\(id)/\(type.collectionName)").getDocuments { querySnapshot, error in
             if let error {
                 completion(.failure(error))
@@ -96,6 +96,34 @@ extension LessonsRepositoryImpl: ILessonsRepository {
                     let pdfUrl = URL(string: pdfString)!
                     
                     let model = LessonOutput(documentId: id, hardness: hardness, name: name, description: description, pdf: pdfUrl)
+                    response.append(model)
+                }
+                
+                completion(.success(response))
+            }
+        }
+    }
+    
+    func getNews(completion: @escaping (Result<NewsListModel, Error>) -> Void) {
+        db.collection("News").getDocuments { q, e in
+            if let e {
+                completion(.failure(e))
+            }
+            
+            if let q {
+                var response: NewsListModel = []
+                
+                for document in q.documents {
+                    let data = document.data()
+                    
+                    let id = document.documentID
+                    let title = data["title"] as! String
+                    let description = data["description"] as! String
+                    let time = data["time"] as! String
+                    let image = data["image"] as! String
+                    let imageUrl = URL(string: image)!
+ 
+                    let model: NewsModel = .init(title: title, description: description, time: time, imageUrl: imageUrl)
                     response.append(model)
                 }
                 

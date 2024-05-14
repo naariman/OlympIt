@@ -37,5 +37,8 @@ final class DashboardRouter: DashboardWireframeProtocol {
         viewController?.dismiss(animated: true)
         viewController?.pushIfPossibleOrPresent(viewController: vc, animated: true, completion: nil)
     }
-    
+    func openNewsDetail(with model: NewsModel) {
+        let vc = NewsDetailRouter.createModule(news: model)
+        viewController?.pushIfPossibleOrPresent(viewController: vc, animated: true, completion: nil)
+    }
 }

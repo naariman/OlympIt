@@ -19,6 +19,8 @@ final class DashboardViewController: UIViewController,
         static let subtitleText = "Что будем учить сегодня?"
         static let welcome = "Добро пожаловать!"
         static let materials = "Материалы"
+        static let news = "Новости"
+        static let tg = "https://t.me/buongiorno797"
     }
 
 	var presenter: DashboardPresenterProtocol?
@@ -30,6 +32,16 @@ final class DashboardViewController: UIViewController,
         label.textColor = .white
         return label
     }()
+    
+    private lazy var connectButton: UIButton = {
+          let button = UIButton()
+          button.setTitle("Связаться с нами", for: .normal)
+          button.setTitleColor(.white, for: .normal)
+          button.backgroundColor = .lightGray
+          button.layer.cornerRadius = 8
+          button.addTarget(self, action: #selector(connectButtonTapped), for: .touchUpInside)
+          return button
+      }()
     
     private let segmentedControl = BetterSegmentedControl(
         frame: .zero,
@@ -69,10 +81,25 @@ final class DashboardViewController: UIViewController,
         return collectionView
     }()
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        setupNavigationBar()
-    }
+    private let newsTitleLabel: UILabel = {
+        let label = UILabel()
+         label.text = Constants.news
+         label.textColor = .white
+         label.font = .systemFont(ofSize: 24, weight: .semibold)
+        label.addUnderline()
+         return label
+     }()
+    
+    private lazy var newsTableView: UITableView = {
+        let tableView = UITableView()
+        tableView.delegate = self
+        tableView.dataSource = self
+        tableView.register(InitialNewsTableViewCell.self)
+        tableView.layer.cornerRadius = 12
+        tableView.alwaysBounceVertical = false
+        tableView.backgroundColor = ._252527
+        return tableView
+    }()
 
 	override func viewDidLoad() {
         super.viewDidLoad()
@@ -80,9 +107,19 @@ final class DashboardViewController: UIViewController,
         presenter?.viewDidLoad()
     }
     
-    func reloadData() {
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        setupNavigationBar()
+    }
+
+    func reloadCollectionView() {
         hideLoadingAnimation()
         collectionView.reloadData()
+    }
+    
+    func reloadTableView() {
+        hideLoadingAnimation()
+        newsTableView.reloadData()
     }
     
     func showAlert(message: String) {
@@ -98,15 +135,18 @@ private extension DashboardViewController {
             text: Constants.welcome,
             color: .white
         )
+        navBar(title: Constants.materials)
     }
     
     func setupUI() {
-        navBar(title: "Материалы")
         view.backgroundColor = ._37343B
         view.addSubviews(
             segmentedControl,
             lessonsTitleLabel,
-            collectionView
+            collectionView,
+            newsTitleLabel,
+            newsTableView,
+            connectButton
         )
     
         segmentedControl.addTarget(
@@ -133,6 +173,24 @@ private extension DashboardViewController {
             make.leading.trailing.equalToSuperview()
             make.height.equalTo(120)
         }
+        
+        newsTitleLabel.snp.makeConstraints { make in
+            make.top.equalTo(collectionView.snp.bottom).offset(32)
+            make.leading.equalTo(lessonsTitleLabel.snp.leading)
+        }
+        
+        newsTableView.snp.makeConstraints { make in
+            make.top.equalTo(newsTitleLabel.snp.bottom).offset(32)
+            make.leading.trailing.equalToSuperview().inset(32)
+            make.height.equalTo(300)
+        }
+        
+        connectButton.snp.makeConstraints { make in
+            make.width.equalTo(180)
+            make.centerX.equalToSuperview()
+            make.height.equalTo(32)
+            make.bottom.equalToSuperview().inset(16)
+        }
     }
     
 }
@@ -148,6 +206,11 @@ private extension DashboardViewController {
             presenter?.lessonType = .exam
         }
     }
+    
+    @objc func connectButtonTapped() {
+           guard let url = URL(string: Constants.tg) else { return }
+           UIApplication.shared.open(url, options: [:], completionHandler: nil)
+       }
 }
 
 // MARK: - UICollectionView
@@ -167,5 +230,32 @@ extension DashboardViewController: UICollectionViewDataSource,
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         presenter?.didSelectItem(at: indexPath.row)
+    }
+}
+
+// MARK: - UITableView
+extension DashboardViewController: UITableViewDataSource,
+                                   UITableViewDelegate {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        guard let presenter else { return 0 }
+        if presenter.news.count >= 3 {
+            return 3
+        } else {
+            return presenter.news.count
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell: InitialNewsTableViewCell = tableView.dequeueReusableCell(forIndexPath: indexPath)
+        cell.configure(news: presenter!.news[indexPath.row])
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        presenter?.didSelectItemNews(at: indexPath.row)
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 100
     }
 }

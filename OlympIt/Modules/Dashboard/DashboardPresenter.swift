@@ -17,7 +17,11 @@ final class DashboardPresenter {
     private var selectedIndex = -1
     
     var lessons: InitialLessonOutputList = []
-
+    var news: NewsListModel = [] {
+        didSet {
+            view?.reloadTableView()
+        }
+    }
     var lessonType: InitialLessonType = .olymp {
         didSet {
             interactor?.fetchExams(by: lessonType)
@@ -32,15 +36,20 @@ final class DashboardPresenter {
 }
 
 extension DashboardPresenter: DashboardPresenterProtocol {
+    func didSelectItemNews(at index: Int) {
+        router.openNewsDetail(with: news[index])
+    }
     
     func viewDidLoad() {
         lessonType = .olymp
+        getNews()
     }
     
     func didFetchLessons(with lessons: InitialLessonOutputList) {
         self.lessons.removeAll()
         self.lessons = lessons
-        view?.reloadData()
+        view?.reloadCollectionView()
+        view?.hideLoading()
     }
     
     func error(message: String) {
@@ -56,5 +65,18 @@ extension DashboardPresenter: DashboardPresenterProtocol {
 extension DashboardPresenter: SelectableBottomSheetDelegate {
     func didSelect(type: LessonType) {
         router.openLessonsList(initialLessonType: lessonType, type: type, lessonId: lessons[selectedIndex].id)
+    }
+}
+
+// MARK: - News
+extension DashboardPresenter {
+    private func getNews() {
+        view?.showLoading()
+        interactor?.getNews()
+    }
+    
+    func didGetNews(with news: NewsListModel) {
+        self.news = news
+        view?.hideLoading()
     }
 }

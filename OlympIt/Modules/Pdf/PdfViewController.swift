@@ -21,9 +21,14 @@ final class PdfViewController: UIViewController, PdfViewProtocol {
         setup()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+    }
+    
     private func setup() {
         webView.uiDelegate = self
         webView.navigationDelegate = self
+        webView.scrollView.showsVerticalScrollIndicator = false
         showLoadingAnimation()
         view.backgroundColor = .clear
         view.addSubview(webView)

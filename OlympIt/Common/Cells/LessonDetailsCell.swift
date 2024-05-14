@@ -86,14 +86,14 @@ private extension LessonDetailsCell {
         }
         
         accessoryCircleView.snp.makeConstraints { make in
-            make.leading.equalToSuperview().offset(8)
+            make.leading.equalToSuperview().offset(12)
             make.size.equalTo(6)
-            make.centerY.equalTo(titleLabel.snp.centerY)
+            make.centerY.equalTo(titleLabel.snp.centerY).offset(1)
         }
         
         descriptionLabel.snp.makeConstraints { make in
             make.top.equalTo(titleLabel.snp.bottom).offset(4)
-            make.leading.equalTo(titleLabel.snp.leading)
+            make.leading.equalTo(accessoryCircleView.snp.leading)
             make.trailing.equalToSuperview().inset(16)
         }
     }

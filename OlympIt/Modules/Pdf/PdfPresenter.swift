@@ -22,7 +22,7 @@ final class PdfPresenter: PdfPresenterProtocol {
         self.url = url
     }
     
-    func viewDidLoad() {    }
+    func viewDidLoad() {}
     
     func getUrl() -> URL {
         url

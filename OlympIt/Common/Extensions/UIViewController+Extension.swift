@@ -150,7 +150,7 @@ extension UIViewController {
         let bounds = view.bounds
         let activityView = NVActivityIndicatorView(
             frame: bounds,
-            type: .pacman,
+            type: .circleStrokeSpin,
             color: .green,
             padding: bounds.width * 0.4
         )

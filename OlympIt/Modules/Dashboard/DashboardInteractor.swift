@@ -26,4 +26,15 @@ extension DashboardInteractor: DashboardInteractorProtocol {
             }
         }
     }
+    
+    func getNews() {
+        repository.getNews() { result in
+            switch result {
+            case .success(let response):
+                self.presenter?.didGetNews(with: response)
+            case .failure(let error):
+                self.presenter?.error(message: error.localizedDescription)
+            }
+        }
+    }
 }
