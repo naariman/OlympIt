@@ -32,4 +32,13 @@ final class LessonsListRouter: LessonsListWireframeProtocol {
         let vc = PdfRouter.createModule(pdfUrl: url)
         viewController?.pushIfPossibleOrPresent(viewController: vc, animated: true, completion: nil)
     }
+    
+    func openList(lessonId: String, olympId: String) {
+        let viewModel = OlympViewModel(lessonId: lessonId, olympId: olympId)
+        let vc = OlympYearViewController(viewModel: viewModel)
+        vc.completion = { [weak self] url in
+            self?.openPdf(with: url)
+        }
+        viewController?.pushIfPossibleOrPresent(viewController: vc, animated: true, completion: nil)
+    }
 }

@@ -23,6 +23,7 @@ final class LessonDetailsCell: UITableViewCell, ReusableView {
     
     private let titleLabel: UILabel = {
         let label = UILabel()
+        label.numberOfLines = 0
         label.textColor = .white
         label.font = .systemFont(ofSize: 18, weight: .bold)
         label.textAlignment = .left
@@ -82,6 +83,7 @@ private extension LessonDetailsCell {
         
         titleLabel.snp.makeConstraints { make in
             make.top.equalTo(16)
+            make.trailing.equalToSuperview().inset(5)
             make.leading.equalTo(accessoryCircleView.snp.trailing).offset(4)
         }
         

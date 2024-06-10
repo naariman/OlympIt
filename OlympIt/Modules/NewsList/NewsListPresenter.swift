@@ -16,9 +16,20 @@ final class NewsListPresenter: NewsListPresenterProtocol {
     private let router: NewsListWireframeProtocol
     var news: NewsListModel = []
 
-    init(interface: NewsListViewProtocol, interactor: NewsListInteractorProtocol?, router: NewsListWireframeProtocol, news: NewsListModel) {
+    init(interface: NewsListViewProtocol, interactor: NewsListInteractorProtocol?, 
+         router: NewsListWireframeProtocol) {
         self.view = interface
         self.interactor = interactor
         self.router = router
+        interactor?.fetchNews()
+    }
+    
+    func didGetNews(with news: NewsListModel) {
+        self.news = news
+        view?.reloadTable()
+    }
+    
+    func didSelectItemNews(at index: Int) {
+        router.openNewsDetail(with: news[index])
     }
 }

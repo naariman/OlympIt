@@ -36,6 +36,10 @@ final class DashboardPresenter {
 }
 
 extension DashboardPresenter: DashboardPresenterProtocol {
+    func didTappedShowMore() {
+        router.openNewsList()
+    }
+    
     func didSelectItemNews(at index: Int) {
         router.openNewsDetail(with: news[index])
     }

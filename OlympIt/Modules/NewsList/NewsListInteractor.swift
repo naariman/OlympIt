@@ -12,4 +12,16 @@ import UIKit
 
 final class NewsListInteractor: NewsListInteractorProtocol {
     weak var presenter: NewsListPresenterProtocol?
+    private let repository: NewsRepository = NewsRepositoryImpl()
+
+    func fetchNews() {
+        repository.getNews { res in
+            switch res {
+            case .success(let success):
+                self.presenter?.didGetNews(with: success)
+            case .failure(let failure):
+                print(failure)
+            }
+        }
+    }
 }

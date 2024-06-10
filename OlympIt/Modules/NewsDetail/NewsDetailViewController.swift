@@ -13,31 +13,14 @@ import UIKit
 final class NewsDetailViewController: UIViewController, NewsDetailViewProtocol {
 	var presenter: NewsDetailPresenterProtocol?
     
-    private let titleLabel: UILabel = {
-        let label = UILabel()
-        label.textAlignment = .center
-        label.font = .systemFont(ofSize: 24, weight: .bold)
-        label.numberOfLines = 0
-        label.textColor = .white
-        return label
-    }()
+    let news: NewsModel
     
-    private let imageView: UIImageView = {
-        let imageView = UIImageView()
-        imageView.contentMode = .scaleAspectFit
-        imageView.layer.cornerRadius = 12
-        imageView.clipsToBounds = true
-        return imageView
-    }()
-    
-    private let descriptionLabel: UILabel = {
-        let label = UILabel()
-        label.textColor = .white
-        label.numberOfLines = 0
-        return label
+    private lazy var newsView: Bridged = {
+        NewsDetailView(news: self.news).convertSwiftUIToHosting()
     }()
     
     init(news: NewsModel) {
+        self.news = news
         super.init(nibName: nil, bundle: nil)
         self.configure(news: news)
     }
@@ -47,38 +30,50 @@ final class NewsDetailViewController: UIViewController, NewsDetailViewProtocol {
     }
     
     func configure(news: NewsModel) {
-        imageView.kf.setImage(with: news.imageUrl)
-        titleLabel.text = news.title
-        descriptionLabel.text = news.description
+//        imageView.kf.setImage(with: news.imageUrl)
+//        titleLabel.text = news.title
+//        descriptionLabel.setTitle(news.description, for: .normal)
+//        setLeftAlignedNavigationItemTitle(text: news.title, color: .white)
     }
     
 	override func viewDidLoad() {
         super.viewDidLoad()
-        setupUI()
+//        setupUI()
+        setupSwiftUI(newsView)
+        setLeftAlignedNavigationItemTitle(text: news.title, color: .white)
     }
     
-    func setupUI() {
-        view.backgroundColor = ._37343B
-        
-        view.addSubviews(
-            titleLabel,
-            imageView,
-            descriptionLabel
-        )
-        titleLabel.snp.makeConstraints { make in
-            make.top.equalTo(view.safeAreaLayoutGuide.snp.top).offset(32)
-            make.leading.trailing.equalToSuperview().inset(16)
-        }
-        
-        imageView.snp.makeConstraints { make in
-            make.top.equalTo(titleLabel.snp.bottom).offset(16)
-            make.leading.trailing.equalToSuperview()
-            make.height.equalTo(200)
-        }
-        
-        descriptionLabel.snp.makeConstraints { make in
-            make.top.equalTo(imageView.snp.bottom).offset(16)
-            make.leading.trailing.equalToSuperview().inset(16)
-        }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+//        self.navigationController?.navigationBar.prefersLargeTitles = true
+//        self.navigationItem.largeTitleDisplayMode = .always
+//        self.navigationController?.navigationBar.shadowImage = UIImage()
+//        self.navigationController?.navigationBar.backgroundColor = .red
     }
+//    func setupUI() {
+//        view.backgroundColor = ._37343B
+//        
+//        view.addSubviews(
+//            titleLabel,
+//            imageView,
+//            descriptionLabel
+//        )
+//        
+//        titleLabel.snp.makeConstraints { make in
+//            make.top.equalTo(view.safeAreaLayoutGuide.snp.top).offset(32)
+//            make.leading.trailing.equalToSuperview().inset(16)
+//        }
+//        
+//        imageView.snp.makeConstraints { make in
+//            make.top.equalTo(titleLabel.snp.bottom).offset(16)
+//            make.leading.trailing.equalToSuperview()
+//            make.height.equalTo(200)
+//        }
+//        
+//        descriptionLabel.snp.makeConstraints { make in
+//            make.top.equalTo(imageView.snp.bottom).offset(16)
+//            make.leading.trailing.equalToSuperview().inset(16)
+//        }
+//    }
 }
+

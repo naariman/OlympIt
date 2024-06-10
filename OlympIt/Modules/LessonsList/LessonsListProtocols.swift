@@ -13,14 +13,17 @@ import Foundation
 //MARK: Wireframe -
 protocol LessonsListWireframeProtocol: AnyObject {
     func openPdf(with url: URL)
+    func openList(lessonId: String, olympId: String)
 }
 //MARK: Presenter -
 protocol LessonsListPresenterProtocol: AnyObject {
+    var type: LessonType { get set}
     var lessons: LessonsListOutput { get set }
     func viewDidLoad()
     func didSelect(at index: Int)
     func didFetchLessons(response: LessonsListOutput)
     func search(searchText: String)
+    func changeType(type: LessonType)
 }
 
 //MARK: Interactor -
