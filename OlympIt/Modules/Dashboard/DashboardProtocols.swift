@@ -15,6 +15,7 @@ protocol DashboardWireframeProtocol: AnyObject {
     func openBottomSheet(executor: AnyObject)
     func openLessonsList(initialLessonType: InitialLessonType, type: LessonType, lessonId: String)
     func openNewsDetail(with model: NewsModel)
+    func openNewsList()
 }
 //MARK: Presenter -
 protocol DashboardPresenterProtocol: AnyObject {
@@ -28,6 +29,7 @@ protocol DashboardPresenterProtocol: AnyObject {
     func error(message: String)
     func didSelectItem(at index: Int)
     func didSelectItemNews(at index: Int)
+    func didTappedShowMore()
 }
 
 //MARK: Interactor -

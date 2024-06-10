@@ -16,6 +16,7 @@ final class NewsDetailRouter: NewsDetailWireframeProtocol {
     static func createModule(news: NewsModel) -> UIViewController {
         // Change to get view from storyboard if not using progammatic UI
         let view = NewsDetailViewController(news: news)
+        view.navigationController?.navigationBar.isHidden = true
         let interactor = NewsDetailInteractor()
         let router = NewsDetailRouter()
         let presenter = NewsDetailPresenter(interface: view, interactor: interactor, router: router)

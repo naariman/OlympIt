@@ -131,4 +131,37 @@ extension LessonsRepositoryImpl: ILessonsRepository {
             }
         }
     }
+    
+    func fetchOlympYearList(initialLessonType: InitialLessonType, id: String, type: LessonType, completion: @escaping (Result<[OlympModel], Error>) -> Void) {
+        db.collection("/\(initialLessonType.collectionName)/\(id)/\(type.collectionName)").getDocuments { querySnapshot, error in
+            if let error {
+                completion(.failure(error))
+            }
+            
+            if let querySnapshot {
+                var response: [OlympModel] = []
+                
+                for document in querySnapshot.documents {
+                    let data = document.data()
+                    
+                    let id = document.documentID
+                    let year = data["year"] as? String ?? "Error"
+                    let description = data["description"] as? String ?? "Error"
+                    let pdfString = data["pdf"] as? String ?? "Error"
+                    let pdfUrl = URL(string: pdfString)!
+                    
+                    let model = OlympModel(year: year, description: description, pdf: pdfUrl)
+                    response.append(model)
+                }
+                
+                completion(.success(response))
+            }
+        }
+    }
+}
+
+struct OlympModel: Codable {
+    let year: String?
+    let description: String?
+    let pdf: URL?
 }

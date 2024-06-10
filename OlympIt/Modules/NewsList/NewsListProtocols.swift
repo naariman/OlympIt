@@ -12,19 +12,23 @@ import Foundation
 
 //MARK: Wireframe -
 protocol NewsListWireframeProtocol: AnyObject {
-
+    func openNewsDetail(with model: NewsModel)
 }
 //MARK: Presenter -
 protocol NewsListPresenterProtocol: AnyObject {
-
+    func didGetNews(with news: NewsListModel)
+    var news: NewsListModel { get set }
+    func didSelectItemNews(at: Int)
 }
 
 //MARK: Interactor -
 protocol NewsListInteractorProtocol: AnyObject {
   var presenter: NewsListPresenterProtocol?  { get set }
+  func fetchNews()
 }
 
 //MARK: View -
 protocol NewsListViewProtocol: AnyObject {
   var presenter: NewsListPresenterProtocol?  { get set }
+  func reloadTable()
 }

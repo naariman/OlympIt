@@ -11,12 +11,17 @@
 import UIKit
 
 final class LessonsListPresenter: LessonsListPresenterProtocol {
+    func changeType(type: LessonType) {
+        
+        self.type = type
+    }
+    
     
     weak private var view: LessonsListViewProtocol?
     var interactor: LessonsListInteractorProtocol?
     private let router: LessonsListWireframeProtocol
     private let lessonId: String
-    private let type: LessonType
+    internal var type: LessonType
     private let initialLessonType: InitialLessonType
     var initialLessons: LessonsListOutput = []
     var lessons: LessonsListOutput = [] {
@@ -44,7 +49,11 @@ final class LessonsListPresenter: LessonsListPresenterProtocol {
     }
     
     func didSelect(at index: Int) {
-        router.openPdf(with: lessons[index].pdf)
+        if initialLessonType == .olymp && type == .practice {
+            router.openList(lessonId: lessonId, olympId: lessons[index].documentId)
+        } else {
+            router.openPdf(with: lessons[index].pdf)
+        }
     }
     
     func search(searchText: String) {

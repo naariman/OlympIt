@@ -33,6 +33,16 @@ final class DashboardViewController: UIViewController,
         return label
     }()
     
+    private lazy var showMore: UIButton = {
+          let button = UIButton()
+          button.setTitle("Показать больше", for: .normal)
+          button.setTitleColor(._727274, for: .normal)
+          button.backgroundColor = ._252527
+          button.layer.cornerRadius = 10
+          button.addTarget(self, action: #selector(showMoreButtonTapped), for: .touchUpInside)
+          return button
+    }()
+    
     private lazy var connectButton: UIButton = {
           let button = UIButton()
           button.setTitle("Связаться с нами", for: .normal)
@@ -86,7 +96,7 @@ final class DashboardViewController: UIViewController,
          label.text = Constants.news
          label.textColor = .white
          label.font = .systemFont(ofSize: 24, weight: .semibold)
-        label.addUnderline()
+//        label.addUnderline()
          return label
      }()
     
@@ -94,6 +104,7 @@ final class DashboardViewController: UIViewController,
         let tableView = UITableView()
         tableView.delegate = self
         tableView.dataSource = self
+        tableView.isScrollEnabled = false
         tableView.register(InitialNewsTableViewCell.self)
         tableView.layer.cornerRadius = 12
         tableView.alwaysBounceVertical = false
@@ -146,6 +157,7 @@ private extension DashboardViewController {
             collectionView,
             newsTitleLabel,
             newsTableView,
+            showMore,
             connectButton
         )
     
@@ -169,7 +181,7 @@ private extension DashboardViewController {
         }
         
         collectionView.snp.makeConstraints { make in
-            make.top.equalTo(lessonsTitleLabel.snp.bottom).offset(32)
+            make.top.equalTo(lessonsTitleLabel.snp.bottom).offset(20)
             make.leading.trailing.equalToSuperview()
             make.height.equalTo(120)
         }
@@ -180,9 +192,16 @@ private extension DashboardViewController {
         }
         
         newsTableView.snp.makeConstraints { make in
-            make.top.equalTo(newsTitleLabel.snp.bottom).offset(32)
-            make.leading.trailing.equalToSuperview().inset(32)
-            make.height.equalTo(300)
+            make.top.equalTo(newsTitleLabel.snp.bottom).offset(5)
+            make.leading.trailing.equalToSuperview().inset(25)
+            make.height.equalTo(297)
+        }
+        
+        showMore.snp.makeConstraints { make in
+            make.top.equalTo(newsTableView.snp.bottom).offset(25)
+            make.height.equalTo(53)
+            make.width.equalTo(185)
+            make.centerX.equalToSuperview()
         }
         
         connectButton.snp.makeConstraints { make in
@@ -208,9 +227,13 @@ private extension DashboardViewController {
     }
     
     @objc func connectButtonTapped() {
-           guard let url = URL(string: Constants.tg) else { return }
-           UIApplication.shared.open(url, options: [:], completionHandler: nil)
-       }
+        guard let url = URL(string: Constants.tg) else { return }
+        UIApplication.shared.open(url, options: [:], completionHandler: nil)
+    }
+    
+    @objc func showMoreButtonTapped() {
+        presenter?.didTappedShowMore()
+    }
 }
 
 // MARK: - UICollectionView
