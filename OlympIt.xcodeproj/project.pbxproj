@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		410DDEBE2C173EC90053B5D5 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 410DDEBD2C173EC90053B5D5 /* SnapKit */; };
 		4117C0AF2BF65087005554E7 /* NewsDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4117C0AE2BF65087005554E7 /* NewsDetailView.swift */; };
 		4117C0B12BF65116005554E7 /* View+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4117C0B02BF65115005554E7 /* View+Extension.swift */; };
 		413BC36E2BFA404400672D19 /* OlympYearViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 413BC36D2BFA404400672D19 /* OlympYearViewController.swift */; };
@@ -79,9 +78,11 @@
 		9EDC16672BC192A2006D212E /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 9EDC16662BC192A2006D212E /* Kingfisher */; };
 		9EF4032D2BCAF64100B78D97 /* URLBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EF4032C2BCAF64100B78D97 /* URLBase.swift */; };
 		9EF403332BCAFCD800B78D97 /* RequestDecoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EF403322BCAFCD800B78D97 /* RequestDecoder.swift */; };
+		C9C6DF9F9494D2A1991AFC20 /* Pods_OlympIt.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D9CF56A6C2613EAF894E060 /* Pods_OlympIt.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0D9CF56A6C2613EAF894E060 /* Pods_OlympIt.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OlympIt.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4117C0AE2BF65087005554E7 /* NewsDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsDetailView.swift; sourceTree = "<group>"; };
 		4117C0B02BF65115005554E7 /* View+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Extension.swift"; sourceTree = "<group>"; };
 		413BC36D2BFA404400672D19 /* OlympYearViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OlympYearViewController.swift; sourceTree = "<group>"; };
@@ -140,6 +141,8 @@
 		9EDC16632BC10C70006D212E /* UICollectionView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionView+Extension.swift"; sourceTree = "<group>"; };
 		9EF4032C2BCAF64100B78D97 /* URLBase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLBase.swift; sourceTree = "<group>"; };
 		9EF403322BCAFCD800B78D97 /* RequestDecoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestDecoder.swift; sourceTree = "<group>"; };
+		BCE352BE254A5EE9DAFC9966 /* Pods-OlympIt.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OlympIt.debug.xcconfig"; path = "Target Support Files/Pods-OlympIt/Pods-OlympIt.debug.xcconfig"; sourceTree = "<group>"; };
+		D1B4352C872499535BCB1C98 /* Pods-OlympIt.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OlympIt.release.xcconfig"; path = "Target Support Files/Pods-OlympIt/Pods-OlympIt.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -148,7 +151,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				9EB05D9E2BEEB8DF0056BDFB /* PanModal in Frameworks */,
-				410DDEBE2C173EC90053B5D5 /* SnapKit in Frameworks */,
 				9E543E032BC27662002B6A5C /* RxMoya in Frameworks */,
 				9E89672A2B81EC8300BAA53B /* NVActivityIndicatorView in Frameworks */,
 				9E543DFD2BC27662002B6A5C /* CombineMoya in Frameworks */,
@@ -163,6 +165,7 @@
 				9EDC16672BC192A2006D212E /* Kingfisher in Frameworks */,
 				9E098C442BB83BA80027BE71 /* FirebaseAppCheck in Frameworks */,
 				9E89672C2B81EC8300BAA53B /* NVActivityIndicatorViewExtended in Frameworks */,
+				C9C6DF9F9494D2A1991AFC20 /* Pods_OlympIt.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -177,6 +180,15 @@
 			path = NewsRepository;
 			sourceTree = "<group>";
 		};
+		8C2F13D3C6E60A05D2430FDC /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				BCE352BE254A5EE9DAFC9966 /* Pods-OlympIt.debug.xcconfig */,
+				D1B4352C872499535BCB1C98 /* Pods-OlympIt.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		9E098C392BB8387E0027BE71 /* Images */ = {
 			isa = PBXGroup;
 			children = (
@@ -188,6 +200,7 @@
 		9E2AC1B52BDEBB8D00803374 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				0D9CF56A6C2613EAF894E060 /* Pods_OlympIt.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -226,6 +239,7 @@
 				9EA027492B81E0860046B1C1 /* OlympIt */,
 				9E098C382BB8375C0027BE71 /* OlympIt.app */,
 				9E2AC1B52BDEBB8D00803374 /* Frameworks */,
+				8C2F13D3C6E60A05D2430FDC /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -432,9 +446,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 9EA0275B2B81E0880046B1C1 /* Build configuration list for PBXNativeTarget "OlympIt" */;
 			buildPhases = (
+				0F246AE4DE59088F83280FFA /* [CP] Check Pods Manifest.lock */,
 				9EA027432B81E0860046B1C1 /* Sources */,
 				9EA027442B81E0860046B1C1 /* Frameworks */,
 				9EA027452B81E0860046B1C1 /* Resources */,
+				BC40C0D498D2E0E3E9EA6E43 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -457,7 +473,6 @@
 				9E543E022BC27662002B6A5C /* RxMoya */,
 				9E2AC1B62BDEBB8D00803374 /* FirebaseFirestore */,
 				9EB05D9D2BEEB8DF0056BDFB /* PanModal */,
-				410DDEBD2C173EC90053B5D5 /* SnapKit */,
 			);
 			productName = OlympIt;
 			productReference = 9E098C382BB8375C0027BE71 /* OlympIt.app */;
@@ -494,7 +509,6 @@
 				9EDC16652BC192A2006D212E /* XCRemoteSwiftPackageReference "Kingfisher" */,
 				9E543DFB2BC27662002B6A5C /* XCRemoteSwiftPackageReference "Moya" */,
 				9EB05D9C2BEEB8DF0056BDFB /* XCRemoteSwiftPackageReference "PanModal" */,
-				410DDEBC2C173EC90053B5D5 /* XCRemoteSwiftPackageReference "SnapKit" */,
 			);
 			productRefGroup = 9EA0273E2B81E0860046B1C1;
 			projectDirPath = "";
@@ -517,6 +531,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0F246AE4DE59088F83280FFA /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-OlympIt-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BC40C0D498D2E0E3E9EA6E43 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-OlympIt/Pods-OlympIt-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-OlympIt/Pods-OlympIt-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-OlympIt/Pods-OlympIt-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		9EA027432B81E0860046B1C1 /* Sources */ = {
@@ -714,6 +770,7 @@
 		};
 		9EA0275C2B81E0880046B1C1 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BCE352BE254A5EE9DAFC9966 /* Pods-OlympIt.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -741,6 +798,7 @@
 		};
 		9EA0275D2B81E0880046B1C1 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D1B4352C872499535BCB1C98 /* Pods-OlympIt.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -790,14 +848,6 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		410DDEBC2C173EC90053B5D5 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/SnapKit/SnapKit";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 5.7.1;
-			};
-		};
 		9E098C3A2BB83BA80027BE71 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
@@ -849,11 +899,6 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		410DDEBD2C173EC90053B5D5 /* SnapKit */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 410DDEBC2C173EC90053B5D5 /* XCRemoteSwiftPackageReference "SnapKit" */;
-			productName = SnapKit;
-		};
 		9E098C3B2BB83BA80027BE71 /* FirebaseAnalytics */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 9E098C3A2BB83BA80027BE71 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
