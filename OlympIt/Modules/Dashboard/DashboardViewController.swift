@@ -181,7 +181,7 @@ private extension DashboardViewController {
         }
         
         collectionView.snp.makeConstraints { make in
-            make.top.equalTo(lessonsTitleLabel.snp.bottom).offset(10)
+            make.top.equalTo(lessonsTitleLabel.snp.bottom).offset(13)
             make.leading.trailing.equalToSuperview()
             make.height.equalTo(120)
         }
@@ -192,7 +192,7 @@ private extension DashboardViewController {
         }
         
         newsTableView.snp.makeConstraints { make in
-            make.top.equalTo(newsTitleLabel.snp.bottom).offset(10)
+            make.top.equalTo(newsTitleLabel.snp.bottom).offset(13)
             make.leading.trailing.equalToSuperview().inset(25)
             make.height.equalTo(297)
         }
