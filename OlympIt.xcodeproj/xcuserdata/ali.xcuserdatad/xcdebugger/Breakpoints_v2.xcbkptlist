@@ -49,53 +49,20 @@
                   endingLineNumber = "36"
                   offsetFromSymbolStart = "852">
                </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "FDE702F5-1EB8-438D-9E76-B9DF03CD9ECE"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "OlympIt/Modules/NewsDetail/NewsDetailRouter.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "19"
-            endingLineNumber = "19"
-            landmarkName = "createModule(news:)"
-            landmarkType = "7">
-            <Locations>
                <Location
-                  uuid = "FDE702F5-1EB8-438D-9E76-B9DF03CD9ECE - 309d6fac5e0115c1"
+                  uuid = "E515815C-214D-4537-B089-3C1E70134768 - 67f13917242c4637"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "static OlympIt.NewsDetailRouter.createModule(news: OlympIt.NewsModel) -&gt; __C.UIViewController"
+                  symbolName = "closure #1 (Swift.Optional&lt;__C.FIRQuerySnapshot&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in OlympIt.NewsRepositoryImpl.getNews(completion: (Swift.Result&lt;Swift.Array&lt;OlympIt.NewsModel&gt;, Swift.Error&gt;) -&gt; ()) -&gt; ()"
                   moduleName = "OlympIt"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/ali/Desktop/OlympIt_iOS/OlympIt/Modules/NewsDetail/NewsDetailRouter.swift"
+                  urlString = "file:///Users/ali/Desktop/OlympIt_iOS/OlympIt/Services/NewsRepository/NewsRepository.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "19"
-                  endingLineNumber = "19"
-                  offsetFromSymbolStart = "196">
-               </Location>
-               <Location
-                  uuid = "FDE702F5-1EB8-438D-9E76-B9DF03CD9ECE - 309d6fac5e0115c1"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "static OlympIt.NewsDetailRouter.createModule(news: OlympIt.NewsModel) -&gt; __C.UIViewController"
-                  moduleName = "OlympIt"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/ali/Desktop/OlympIt_iOS/OlympIt/Modules/NewsDetail/NewsDetailRouter.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "19"
-                  endingLineNumber = "19"
-                  offsetFromSymbolStart = "176">
+                  startingLineNumber = "36"
+                  endingLineNumber = "36"
+                  offsetFromSymbolStart = "960">
                </Location>
             </Locations>
          </BreakpointContent>

@@ -34,13 +34,13 @@ final class DashboardViewController: UIViewController,
     }()
     
     private lazy var showMore: UIButton = {
-          let button = UIButton()
-          button.setTitle("Показать больше", for: .normal)
-          button.setTitleColor(._727274, for: .normal)
-          button.backgroundColor = ._252527
-          button.layer.cornerRadius = 10
-          button.addTarget(self, action: #selector(showMoreButtonTapped), for: .touchUpInside)
-          return button
+        let button = UIButton()
+        button.setTitle("Показать больше", for: .normal)
+        button.titleLabel?.font = UIFont.systemFont(ofSize: 15, weight: .semibold)
+        button.setTitleColor(._727274, for: .normal)
+        button.backgroundColor = .clear
+        button.addTarget(self, action: #selector(showMoreButtonTapped), for: .touchUpInside)
+        return button
     }()
     
     private lazy var connectButton: UIButton = {
@@ -176,32 +176,32 @@ private extension DashboardViewController {
         }
         
         lessonsTitleLabel.snp.makeConstraints { make in
-            make.top.equalTo(segmentedControl.snp.bottom).offset(24)
+            make.top.equalTo(segmentedControl.snp.bottom).offset(18)
             make.leading.equalTo(16)
         }
         
         collectionView.snp.makeConstraints { make in
-            make.top.equalTo(lessonsTitleLabel.snp.bottom).offset(20)
+            make.top.equalTo(lessonsTitleLabel.snp.bottom).offset(13)
             make.leading.trailing.equalToSuperview()
             make.height.equalTo(120)
         }
         
         newsTitleLabel.snp.makeConstraints { make in
-            make.top.equalTo(collectionView.snp.bottom).offset(32)
+            make.top.equalTo(collectionView.snp.bottom).offset(20)
             make.leading.equalTo(lessonsTitleLabel.snp.leading)
         }
         
         newsTableView.snp.makeConstraints { make in
-            make.top.equalTo(newsTitleLabel.snp.bottom).offset(5)
+            make.top.equalTo(newsTitleLabel.snp.bottom).offset(13)
             make.leading.trailing.equalToSuperview().inset(25)
             make.height.equalTo(297)
         }
         
         showMore.snp.makeConstraints { make in
-            make.top.equalTo(newsTableView.snp.bottom).offset(25)
+            make.centerY.equalTo(newsTitleLabel)
             make.height.equalTo(53)
-            make.width.equalTo(185)
-            make.centerX.equalToSuperview()
+            make.width.equalTo(130)
+            make.trailing.equalToSuperview().inset(16)
         }
         
         connectButton.snp.makeConstraints { make in
