@@ -70,7 +70,7 @@ final class NewsListViewController: UIViewController, NewsListViewProtocol {
         setupUI()
         navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
         navigationController?.navigationBar.shadowImage = UIImage()
-        setLeftAlignedNavigationItemTitle(text: "Новости", color: .white)        
+        setLeftAlignedNavigationItemTitle(text: "Новости", color: .white)
     }
     
     override func viewWillLayoutSubviews() {
@@ -85,6 +85,12 @@ final class NewsListViewController: UIViewController, NewsListViewProtocol {
         backView.addSubviews(uiview)
         view.addSubview(emptyCase)
         
+        view.addSubview(searchBar)
+        searchBar.snp.makeConstraints { make in
+            make.height.equalTo(50)
+            make.top.equalTo(view.safeAreaLayoutGuide)
+            make.horizontalEdges.equalToSuperview()
+        }
 
         view.addSubviews(backView)
         backView.addSubviews(tableView)

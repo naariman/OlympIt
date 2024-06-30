@@ -11,12 +11,12 @@
 import UIKit
 
 final class NewsDetailViewController: UIViewController, NewsDetailViewProtocol {
-	var presenter: NewsDetailPresenterProtocol?
+    var presenter: NewsDetailPresenterProtocol?
     
     let news: NewsModel
     
     private lazy var newsView: Bridged = {
-        NewsDetailView(news: self.news).convertSwiftUIToHosting()
+        NewsDetailView(news: self.news).bridge()
     }()
     
     init(news: NewsModel) {
@@ -36,10 +36,11 @@ final class NewsDetailViewController: UIViewController, NewsDetailViewProtocol {
 //        setLeftAlignedNavigationItemTitle(text: news.title, color: .white)
     }
     
-	override func viewDidLoad() {
+    override func viewDidLoad() {
         super.viewDidLoad()
 //        setupUI()
         setupSwiftUI(newsView)
+        view.backgroundColor = ._37343B
         setLeftAlignedNavigationItemTitle(text: news.title, color: .white)
     }
     
@@ -47,33 +48,32 @@ final class NewsDetailViewController: UIViewController, NewsDetailViewProtocol {
         super.viewWillAppear(animated)
 //        self.navigationController?.navigationBar.prefersLargeTitles = true
 //        self.navigationItem.largeTitleDisplayMode = .always
-//        self.navigationController?.navigationBar.shadowImage = UIImage()
-//        self.navigationController?.navigationBar.backgroundColor = .red
+        self.navigationController?.navigationBar.shadowImage = UIImage()
+        self.navigationController?.navigationBar.backgroundColor = ._37343B
     }
 //    func setupUI() {
 //        view.backgroundColor = ._37343B
-//        
+//
 //        view.addSubviews(
 //            titleLabel,
 //            imageView,
 //            descriptionLabel
 //        )
-//        
+//
 //        titleLabel.snp.makeConstraints { make in
 //            make.top.equalTo(view.safeAreaLayoutGuide.snp.top).offset(32)
 //            make.leading.trailing.equalToSuperview().inset(16)
 //        }
-//        
+//
 //        imageView.snp.makeConstraints { make in
 //            make.top.equalTo(titleLabel.snp.bottom).offset(16)
 //            make.leading.trailing.equalToSuperview()
 //            make.height.equalTo(200)
 //        }
-//        
+//
 //        descriptionLabel.snp.makeConstraints { make in
 //            make.top.equalTo(imageView.snp.bottom).offset(16)
 //            make.leading.trailing.equalToSuperview().inset(16)
 //        }
 //    }
 }
-

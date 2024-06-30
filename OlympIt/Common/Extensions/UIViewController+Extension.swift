@@ -61,12 +61,13 @@ extension UIViewController {
         titleLabel.translatesAutoresizingMaskIntoConstraints = false
         
         self.navigationItem.titleView = titleLabel
+        navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
+        navigationController?.navigationBar.shadowImage = UIImage()
         
         guard let containerView = self.navigationItem.titleView?.superview else { return }
-        
+
         // NOTE: This always seems to be 0. Huh??
         let leftBarItemWidth = self.navigationItem.leftBarButtonItems?.reduce(0, { $0 + $1.width })
-        
         NSLayoutConstraint.activate([
             titleLabel.topAnchor.constraint(equalTo: containerView.topAnchor, constant: top),
             titleLabel.bottomAnchor.constraint(equalTo: containerView.bottomAnchor),
