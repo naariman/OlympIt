@@ -16,43 +16,72 @@ final class LessonsListViewController: UIViewController,
     
     var completion: (URL) -> () = {_ in}
     
-    private let stackButtons = SegmentButton(frame: .zero)
+//    private let stackButtons = SegmentButton(frame: .zero)
     
     private lazy var tableView: UITableView = {
         let tableView = UITableView()
         tableView.delegate = self
         tableView.dataSource = self
+        tableView.separatorStyle = .none
         tableView.register(LessonDetailsCell.self)
         return tableView
     }()
     
-    private var searchController: UISearchController = {
-        let viewController = UISearchController(searchResultsController: nil)
-        return viewController
+//    private var searchController: UISearchController = {
+//        let viewController = UISearchController(searchResultsController: nil)
+//        return viewController
+//    }()
+    
+    private lazy var searchBar: UISearchBar = {
+        let searchBar = UISearchBar()
+        searchBar.tintColor = .white
+        searchBar.searchBarStyle = .minimal
+        
+        if let searchTextField = searchBar.value(forKey: "searchField") as? UITextField {
+            searchTextField.font = .systemFont(ofSize: 15)
+            searchTextField.textColor = .white
+            searchTextField.backgroundColor = .clear
+            searchTextField.leftView?.tintColor = .white
+            searchTextField.attributedPlaceholder = NSAttributedString(
+                string: "Поиск",
+                attributes: [NSAttributedString.Key.foregroundColor: UIColor.lightGray]
+            )
+        }
+        searchBar.delegate = self
+        return searchBar
     }()
+    
+//    private lazy var emptyCase: UILabel = {
+//        let label = UILabel()
+//        label.text = "Ничего не найдено"
+//        label.textColor = .gray
+//        label.isHidden = true
+//        label.font = .systemFont(ofSize: 15)
+//        return label
+//    }
     
 	override func viewDidLoad() {
         super.viewDidLoad()
         presenter?.viewDidLoad()
         setupViews()
         setupConstraints()
-        stackButtons.tenClassTapped = { [weak self] in
-            guard let self = self else {return}
-            self.presenter?.changeType(type: self.presenter?.type == .practice ? .practice10 : .theory10)
-            self.presenter?.viewDidLoad()
-        }
-        stackButtons.elevenClassTapped = { [weak self] in
-            guard let self = self else {return}
-            self.presenter?.changeType(type: self.presenter?.type == .practice10 ? .practice : .theory)
-            self.presenter?.viewDidLoad()
-        }
+//        stackButtons.tenClassTapped = { [weak self] in
+//            guard let self = self else {return}
+//            self.presenter?.changeType(type: self.presenter?.type == .practice ? .practice10 : .theory10)
+//            self.presenter?.viewDidLoad()
+//        }
+//        stackButtons.elevenClassTapped = { [weak self] in
+//            guard let self = self else {return}
+//            self.presenter?.changeType(type: self.presenter?.type == .practice10 ? .practice : .theory)
+//            self.presenter?.viewDidLoad()
+//        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
         setupNavigationBar()
-        DispatchQueue.main.async {
-            self.searchController.isActive = true
-        }
+//        DispatchQueue.main.async {
+//            self.searchController.isActive = false
+//        }
     }
     
     func reload() {
@@ -60,34 +89,46 @@ final class LessonsListViewController: UIViewController,
     }
     
     private func setupViews() {
+        view.addSubview(searchBar)
+        searchBar.snp.makeConstraints { make in
+            make.height.equalTo(50)
+            make.top.equalTo(view.safeAreaLayoutGuide)
+            make.horizontalEdges.equalToSuperview()
+        }
         view.backgroundColor = ._37343B
         tableView.backgroundColor = ._37343B
-        view.addSubview(stackButtons)
+//        view.addSubview(emptyCase)
+//        view.addSubview(stackButtons)
         view.addSubview(tableView)
     }
     
     func setupNavigationBar() {
         self.navigationController?.navigationBar.tintColor = .white
-        navigationItem.searchController = searchController
-        searchController.delegate = self
-        searchController.searchBar.delegate = self
-        searchController.searchBar.searchTextField.placeholder = "Что вы хотите найти?"
-        searchController.searchBar.searchTextField.tintColor = .white
-        searchController.searchBar.barStyle = .black
-        searchController.searchBar.searchTextField.textColor = .white
+//        navigationItem.searchController = searchController
+//        searchController.delegate = self
+//        searchController.searchBar.delegate = self
+//        searchController.searchBar.searchTextField.placeholder = "Что вы хотите найти?"
+//        searchController.searchBar.searchTextField.tintColor = .white
+//        searchController.searchBar.barStyle = .black
+//        searchController.searchBar.searchTextField.textColor = .white
     }
     
     private func setupConstraints() {
-        stackButtons.snp.makeConstraints { make in
-            make.top.equalTo(view.safeAreaLayoutGuide)
-            make.leading.equalToSuperview().inset(25)
-            make.width.equalTo(150)
-            make.height.equalTo(50)
-        }
+//        stackButtons.snp.makeConstraints { make in
+//            make.top.equalTo(view.safeAreaLayoutGuide)
+//            make.leading.equalToSuperview().inset(25)
+//            make.width.equalTo(150)
+//            make.height.equalTo(50)
+//        }
+        
+//        emptyCase.snp.makeConstraints { make in
+//            make.centerX.equalToSuperview()
+//            make.top.equalTo(searchController.snp.bottom).offset(50)
+//        }
         
         tableView.snp.makeConstraints { make in
             make.horizontalEdges.bottom.equalToSuperview()
-            make.top.equalTo(stackButtons.snp.bottom)
+            make.top.equalTo(searchBar.snp.bottom).offset(16)
         }
     }
 }
@@ -212,10 +253,10 @@ class SegmentButton: UIView {
         
         button.addTarget(self, action: #selector(eleventhClassAction), for: .touchUpInside)
         secondButton.addTarget(self, action: #selector(tenthClassAction), for: .touchUpInside)
-//        [button, secondButton].forEach {
-//            $0.snp.makeConstraints { make in
-//                make.edges
-//            }
-//        }
+        [button, secondButton].forEach {
+            $0.snp.makeConstraints { make in
+                make.edges
+            }
+        }
     }
 }

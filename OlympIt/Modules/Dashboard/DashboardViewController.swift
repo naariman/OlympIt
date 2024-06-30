@@ -20,7 +20,7 @@ final class DashboardViewController: UIViewController,
         static let welcome = "Добро пожаловать!"
         static let materials = "Материалы"
         static let news = "Новости"
-        static let tg = "https://t.me/buongiorno797"
+        static let tg = "https://t.me/olymp_it"
     }
 
 	var presenter: DashboardPresenterProtocol?
@@ -96,7 +96,6 @@ final class DashboardViewController: UIViewController,
          label.text = Constants.news
          label.textColor = .white
          label.font = .systemFont(ofSize: 24, weight: .semibold)
-//        label.addUnderline()
          return label
      }()
     
@@ -168,7 +167,6 @@ private extension DashboardViewController {
             ),
             for: .valueChanged
         )
-    
         segmentedControl.snp.makeConstraints { make in
             make.top.equalTo(view.safeAreaLayoutGuide.snp.top).offset(8)
             make.leading.trailing.equalToSuperview().inset(32)
@@ -193,7 +191,7 @@ private extension DashboardViewController {
         
         newsTableView.snp.makeConstraints { make in
             make.top.equalTo(newsTitleLabel.snp.bottom).offset(13)
-            make.leading.trailing.equalToSuperview().inset(25)
+            make.leading.trailing.equalToSuperview().inset(32)
             make.height.equalTo(297)
         }
         

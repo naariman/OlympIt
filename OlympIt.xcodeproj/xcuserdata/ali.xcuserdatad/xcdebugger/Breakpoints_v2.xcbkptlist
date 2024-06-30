@@ -77,10 +77,42 @@
             filePath = "OlympIt/Modules/NewsList/NewsListViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "170"
-            endingLineNumber = "170"
+            startingLineNumber = "176"
+            endingLineNumber = "176"
             landmarkName = "searchBar(_:textDidChange:)"
             landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "963DA1D9-3615-4D73-9E00-EAE437D144CB - 26d31543fcea869"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "OlympIt.NewsListViewController.searchBar(_: __C.UISearchBar, textDidChange: Swift.String) -&gt; ()"
+                  moduleName = "OlympIt"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ali/Desktop/OlympIt_iOS/OlympIt/Modules/NewsList/NewsListViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "170"
+                  endingLineNumber = "170"
+                  offsetFromSymbolStart = "88">
+               </Location>
+               <Location
+                  uuid = "963DA1D9-3615-4D73-9E00-EAE437D144CB - 26d31543fceafa3"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "OlympIt.NewsListViewController.searchBar(_: __C.UISearchBar, textDidChange: Swift.String) -&gt; ()"
+                  moduleName = "OlympIt"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ali/Desktop/OlympIt_iOS/OlympIt/Modules/NewsList/NewsListViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "176"
+                  endingLineNumber = "176"
+                  offsetFromSymbolStart = "88">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -125,10 +157,42 @@
             filePath = "OlympIt/Modules/LessonsList/LessonsListViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "41"
-            endingLineNumber = "41"
+            startingLineNumber = "70"
+            endingLineNumber = "70"
             landmarkName = "viewDidLoad()"
             landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "602B5F98-801B-4FF1-B114-299B70740121 - d8f677aa4abbdb3a"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "OlympIt.LessonsListViewController.viewDidLoad() -&gt; ()"
+                  moduleName = "OlympIt"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ali/Desktop/OlympIt_iOS/OlympIt/Modules/LessonsList/LessonsListViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "59"
+                  endingLineNumber = "59"
+                  offsetFromSymbolStart = "228">
+               </Location>
+               <Location
+                  uuid = "602B5F98-801B-4FF1-B114-299B70740121 - d8f677aa4abbdda7"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "OlympIt.LessonsListViewController.viewDidLoad() -&gt; ()"
+                  moduleName = "OlympIt"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ali/Desktop/OlympIt_iOS/OlympIt/Modules/LessonsList/LessonsListViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "78"
+                  endingLineNumber = "78"
+                  offsetFromSymbolStart = "228">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -141,10 +205,42 @@
             filePath = "OlympIt/Modules/LessonsList/LessonsListViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "40"
-            endingLineNumber = "40"
+            startingLineNumber = "69"
+            endingLineNumber = "69"
             landmarkName = "viewDidLoad()"
             landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "3A0013FC-AA85-4CC8-ADF9-E30C22896AA8 - d8f677aa4abbdb3a"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "OlympIt.LessonsListViewController.viewDidLoad() -&gt; ()"
+                  moduleName = "OlympIt"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ali/Desktop/OlympIt_iOS/OlympIt/Modules/LessonsList/LessonsListViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "59"
+                  endingLineNumber = "59"
+                  offsetFromSymbolStart = "228">
+               </Location>
+               <Location
+                  uuid = "3A0013FC-AA85-4CC8-ADF9-E30C22896AA8 - d8f677aa4abbdda7"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "OlympIt.LessonsListViewController.viewDidLoad() -&gt; ()"
+                  moduleName = "OlympIt"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ali/Desktop/OlympIt_iOS/OlympIt/Modules/LessonsList/LessonsListViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "78"
+                  endingLineNumber = "78"
+                  offsetFromSymbolStart = "228">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>
