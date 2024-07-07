@@ -5,15 +5,15 @@ struct NewsDetailView: View {
     let news: NewsModel
     var body: some View {
         VStack(spacing: 0) {
-                HStack {
-                    Text("4 часа назад ")
-                        .font(.system(size: 14))
-                        .foregroundColor(Color(UIColor.gray))
-                        .padding(.leading, 15)
-                        .padding(.bottom, 5)
-                    Spacer()
-                }
-                .background(Color(UIColor._727274.withAlphaComponent(0.6)))
+//                HStack {
+//                    Text("4 часа назад ")
+//                        .font(.system(size: 14))
+//                        .foregroundColor(Color(UIColor.gray))
+//                        .padding(.leading, 15)
+//                        .padding(.bottom, 5)
+//                    Spacer()
+//                }
+//                .background(Color(UIColor._727274.withAlphaComponent(0.6)))
                 ScrollView {
                     
                     KFImage

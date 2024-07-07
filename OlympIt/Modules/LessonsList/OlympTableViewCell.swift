@@ -1,11 +1,19 @@
 import UIKit
 
 class OlympTableViewCell: UITableViewCell, ReusableView {
-    private let containerView: UIStackView = {
+    
+    private let containerView: UIView = {
+        let view = UIView()
+        view.backgroundColor = ._252527
+        view.layer.cornerRadius = 10
+        return view
+    }()
+    
+    private let stackView: UIStackView = {
         let view = UIStackView()
         view.backgroundColor = ._252527
         view.axis = .vertical
-        view.alignment = .leading
+        view.alignment = .center
         view.spacing = 5
         view.distribution = .fill
         return view
@@ -14,7 +22,7 @@ class OlympTableViewCell: UITableViewCell, ReusableView {
     private let titleLabel: UILabel = {
         let label = UILabel()
         label.textColor = .white
-        label.font = .systemFont(ofSize: 12, weight: .bold)
+        label.font = .systemFont(ofSize: 14, weight: .bold)
         label.textAlignment = .left
         return label
     }()
@@ -45,12 +53,20 @@ class OlympTableViewCell: UITableViewCell, ReusableView {
 extension OlympTableViewCell {
     func setupViews() {
         layer.cornerRadius = 12
-        backgroundColor = ._252527
+        backgroundColor = ._37343B
         contentView.addSubview(containerView)
+        
+        containerView.addSubview(stackView)
         containerView.snp.makeConstraints { make in
-            make.verticalEdges.equalToSuperview().inset(12)
+            make.horizontalEdges.equalToSuperview().inset(16)
+            make.top.equalToSuperview().inset(8)
+            make.bottom.equalToSuperview()
+        }
+        stackView.snp.makeConstraints { make in
+            make.top.equalToSuperview().inset(9)
+            make.bottom.equalToSuperview().inset(7)
             make.horizontalEdges.equalToSuperview().inset(12)
         }
-        [titleLabel, descriptionLabel].forEach { containerView.addArrangedSubview($0)}
+        [titleLabel, descriptionLabel].forEach { stackView.addArrangedSubview($0)}
     }
 }

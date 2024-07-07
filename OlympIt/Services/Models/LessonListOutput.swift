@@ -21,4 +21,5 @@ struct LessonOutput {
     let name: String
     let description: String
     let pdf: URL
+    let iconUrl: String?
 }

@@ -25,13 +25,13 @@ final class DashboardViewController: UIViewController,
 
 	var presenter: DashboardPresenterProtocol?
     
-    private let titleLabel: UILabel = {
-        let label = UILabel()
-        label.font = .systemFont(ofSize: 28, weight: .bold)
-        label.text = Constants.welcome
-        label.textColor = .white
-        return label
-    }()
+//    private let titleLabel: UILabel = {
+//        let label = UILabel()
+//        label.font = .systemFont(ofSize: 28, weight: .bold)
+//        label.text = Constants.welcome
+//        label.textColor = .white
+//        return label
+//    }()
     
     private lazy var showMore: UIButton = {
         let button = UIButton()
@@ -86,7 +86,7 @@ final class DashboardViewController: UIViewController,
         collectionView.dataSource = self
         collectionView.delegate = self
         collectionView.showsHorizontalScrollIndicator = false
-        collectionView.contentInset = UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
+        collectionView.contentInset = UIEdgeInsets(top: 10, left: 15, bottom: 10, right: 10)
         collectionView.register(LessonCollectionViewCell.self)
         return collectionView
     }()
@@ -115,11 +115,11 @@ final class DashboardViewController: UIViewController,
         super.viewDidLoad()
         setupUI()
         presenter?.viewDidLoad()
+        setupNavigationBar()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        setupNavigationBar()
     }
 
     func reloadCollectionView() {
@@ -168,7 +168,7 @@ private extension DashboardViewController {
             for: .valueChanged
         )
         segmentedControl.snp.makeConstraints { make in
-            make.top.equalTo(view.safeAreaLayoutGuide.snp.top).offset(8)
+            make.top.equalTo(view.safeAreaLayoutGuide.snp.top).offset(18)
             make.leading.trailing.equalToSuperview().inset(32)
             make.height.equalTo(50)
         }

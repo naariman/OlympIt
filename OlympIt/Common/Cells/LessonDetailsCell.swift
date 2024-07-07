@@ -32,10 +32,17 @@ final class LessonDetailsCell: UITableViewCell, ReusableView {
     
     private let descriptionLabel: UILabel = {
         let label = UILabel()
+        label.numberOfLines = 2
         label.textColor = ._727274
         label.font = .systemFont(ofSize: 14, weight: .regular)
         label.textAlignment = .left
         return label
+    }()
+    
+    private let iconImage: UIImageView = {
+        let image = UIImageView()
+        image.contentMode = .scaleAspectFit
+        return image
     }()
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
@@ -46,6 +53,11 @@ final class LessonDetailsCell: UITableViewCell, ReusableView {
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        iconImage.isHidden = true
     }
     
     func configure(model: LessonOutput) {
@@ -63,6 +75,11 @@ final class LessonDetailsCell: UITableViewCell, ReusableView {
         titleLabel.text = model.name
         descriptionLabel.text = model.description
         accessoryCircleView.backgroundColor = accessoryBgColor
+        if let iconUrl = model.iconUrl {
+            iconImage.kf.setImage(with: URL(string: iconUrl))
+        } else {
+            iconImage.isHidden = true
+        }
     }
 }
 
@@ -72,7 +89,7 @@ private extension LessonDetailsCell {
         
         contentView.addSubviews(containerView)
         
-        containerView.addSubviews(accessoryCircleView, titleLabel, descriptionLabel)
+        containerView.addSubviews(accessoryCircleView, titleLabel, descriptionLabel, iconImage)
     }
     
     func setupConstraints() {
@@ -98,6 +115,12 @@ private extension LessonDetailsCell {
             make.top.equalTo(titleLabel.snp.bottom).offset(4)
             make.leading.equalTo(accessoryCircleView.snp.leading)
             make.trailing.equalToSuperview().inset(16)
+        }
+        
+        iconImage.snp.makeConstraints { make in
+            make.size.equalTo(64)
+            make.trailing.equalToSuperview().inset(16)
+            make.centerY.equalToSuperview()
         }
     }
 }

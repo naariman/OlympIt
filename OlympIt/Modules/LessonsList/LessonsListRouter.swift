@@ -28,6 +28,19 @@ final class LessonsListRouter: LessonsListWireframeProtocol {
         return view
     }
     
+    func presentChoose(model: OlympModel) {
+        let vc = SelectableViewController(model: model)
+        vc.selective = { [weak self] url in
+            self?.viewController?.dismiss(animated: true)
+            self?.openPdf(with: url)
+        }
+        vc.final = { [weak self] url in
+            self?.viewController?.dismiss(animated: true)
+            self?.openPdf(with: url)
+        }
+        viewController?.navigationController?.presentPanModal(vc)
+    }
+    
     func openPdf(with url: URL) {
         let vc = PdfRouter.createModule(pdfUrl: url)
         viewController?.pushIfPossibleOrPresent(viewController: vc, animated: true, completion: nil)
@@ -36,8 +49,8 @@ final class LessonsListRouter: LessonsListWireframeProtocol {
     func openList(lessonId: String, olympId: String) {
         let viewModel = OlympViewModel(lessonId: lessonId, olympId: olympId)
         let vc = OlympYearViewController(viewModel: viewModel)
-        vc.completion = { [weak self] url in
-            self?.openPdf(with: url)
+        vc.completion = { [weak self] model in
+            self?.presentChoose(model: model)
         }
         viewController?.pushIfPossibleOrPresent(viewController: vc, animated: true, completion: nil)
     }
