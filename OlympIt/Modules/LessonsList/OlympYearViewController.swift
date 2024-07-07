@@ -2,7 +2,7 @@ import UIKit
 
 final class OlympYearViewController: UIViewController, UISearchControllerDelegate {
     
-    var completion: (URL) -> () = {_ in}
+    var completion: (OlympModel) -> () = {_ in}
     
     let viewModel: OlympViewModel
         
@@ -14,9 +14,28 @@ final class OlympYearViewController: UIViewController, UISearchControllerDelegat
         return tableView
     }()
     
-    private var searchController: UISearchController = {
-        let viewController = UISearchController(searchResultsController: nil)
-        return viewController
+//    private var searchController: UISearchController = {
+//        let viewController = UISearchController(searchResultsController: nil)
+//        return viewController
+//    }()
+    
+    private lazy var searchBar: UISearchBar = {
+        let searchBar = UISearchBar()
+        searchBar.tintColor = .white
+        searchBar.searchBarStyle = .minimal
+        
+        if let searchTextField = searchBar.value(forKey: "searchField") as? UITextField {
+            searchTextField.font = .systemFont(ofSize: 15)
+            searchTextField.textColor = .white
+            searchTextField.backgroundColor = .clear
+            searchTextField.leftView?.tintColor = .white
+            searchTextField.attributedPlaceholder = NSAttributedString(
+                string: "Поиск",
+                attributes: [NSAttributedString.Key.foregroundColor: UIColor.lightGray]
+            )
+        }
+        searchBar.delegate = self
+        return searchBar
     }()
     
     init(viewModel: OlympViewModel) {
@@ -42,9 +61,6 @@ final class OlympYearViewController: UIViewController, UISearchControllerDelegat
     
     override func viewWillAppear(_ animated: Bool) {
         setupNavigationBar()
-        DispatchQueue.main.async {
-            self.searchController.isActive = true
-        }
     }
     
     func reload() {
@@ -59,19 +75,25 @@ final class OlympYearViewController: UIViewController, UISearchControllerDelegat
     
     func setupNavigationBar() {
         self.navigationController?.navigationBar.tintColor = .white
-        navigationItem.searchController = searchController
-        searchController.delegate = self
-        searchController.searchBar.delegate = self
-        searchController.searchBar.searchTextField.placeholder = "Что вы хотите найти?"
-        searchController.searchBar.searchTextField.tintColor = .white
-        searchController.searchBar.barStyle = .black
-        searchController.searchBar.searchTextField.textColor = .white
+//        navigationItem.searchController = searchController
+//        searchController.delegate = self
+//        searchController.searchBar.delegate = self
+//        searchController.searchBar.searchTextField.placeholder = "Что вы хотите найти?"
+//        searchController.searchBar.searchTextField.tintColor = .white
+//        searchController.searchBar.barStyle = .black
+//        searchController.searchBar.searchTextField.textColor = .white
     }
     
     private func setupConstraints() {
+        view.addSubview(searchBar)
+        searchBar.snp.makeConstraints { make in
+            make.height.equalTo(50)
+            make.top.equalTo(view.safeAreaLayoutGuide)
+            make.horizontalEdges.equalToSuperview()
+        }
         tableView.snp.makeConstraints { make in
-            make.verticalEdges.equalToSuperview()
-            make.horizontalEdges.equalToSuperview().inset(26)
+            make.horizontalEdges.bottom.equalToSuperview()
+            make.top.equalTo(searchBar.snp.bottom).offset(5)
         }
     }
 }
@@ -90,11 +112,11 @@ extension OlympYearViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        completion(viewModel.lessons[indexPath.row].pdf!)
+        completion(viewModel.lessons[indexPath.row])
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return CGFloat(UITableView.automaticDimension)
+        return 67
     }
 }
 

@@ -64,7 +64,7 @@ extension LessonsRepositoryImpl: ILessonsRepository {
                     
                     let id = document.documentID
                     let name = data["name"] as? String ?? "Error"
-                    let icon = data["iconUrl"] as! String
+                    let icon = data["iconUrl"] as? String ?? ""
                     let iconUrl = URL(string: icon)!
                     
                     let model = InitialLessonOutput(id: id, name: name, iconUrl: iconUrl)
@@ -94,8 +94,9 @@ extension LessonsRepositoryImpl: ILessonsRepository {
                     let description = data["description"] as? String ?? "Error"
                     let pdfString = data["pdf"] as? String ?? "Error"
                     let pdfUrl = URL(string: pdfString)!
+                    let iconUrl = data["iconUrl"] as? String
                     
-                    let model = LessonOutput(documentId: id, hardness: hardness, name: name, description: description, pdf: pdfUrl)
+                    let model = LessonOutput(documentId: id, hardness: hardness, name: name, description: description, pdf: pdfUrl, iconUrl: iconUrl)
                     response.append(model)
                 }
                 
@@ -148,9 +149,13 @@ extension LessonsRepositoryImpl: ILessonsRepository {
                     let year = data["year"] as? String ?? "Error"
                     let description = data["description"] as? String ?? "Error"
                     let pdfString = data["pdf"] as? String ?? "Error"
+                    let final = data["final"] as? String ?? "Error"
+                    let selective = data["selective"] as? String ?? "Error"
                     let pdfUrl = URL(string: pdfString)!
+                    let finalURL = URL(string: pdfString)!
+                    let selectiveURL = URL(string: pdfString)!
                     
-                    let model = OlympModel(year: year, description: description, pdf: pdfUrl)
+                    let model = OlympModel(year: year, description: description, pdf: pdfUrl, final: finalURL, selective: selectiveURL)
                     response.append(model)
                 }
                 
@@ -164,4 +169,6 @@ struct OlympModel: Codable {
     let year: String?
     let description: String?
     let pdf: URL?
+    let final: URL?
+    let selective: URL?
 }

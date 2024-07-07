@@ -22,11 +22,15 @@ final class OlympRepositoryImpl {
                     
                     let id = document.documentID
                     let year = data["year"] as? String ?? "Error"
-                    let description = data["description"] as? String ?? "Error"
+                    let description = data["description"] as? String
                     let pdfString = data["pdf"] as? String ?? "Error"
+                    let final = data["final"] as? String ?? "Error"
+                    let selective = data["selective"] as? String ?? "Error"
                     let pdfUrl = URL(string: pdfString)!
+                    let finalURL = URL(string: final)!
+                    let selectiveURL = URL(string: selective)!
                     
-                    let model = OlympModel(year: year, description: description, pdf: pdfUrl)
+                    let model = OlympModel(year: year, description: description, pdf: pdfUrl, final: finalURL, selective: selectiveURL)
                     response.append(model)
                 }
                 
